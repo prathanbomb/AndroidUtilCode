@@ -62,7 +62,7 @@ dependencies {
     testCompile "junit:junit:$rootProject.ext.junitVersion"
     testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
     testCompile "com.google.truth:truth:0.31"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
 repositories {
     mavenCentral()

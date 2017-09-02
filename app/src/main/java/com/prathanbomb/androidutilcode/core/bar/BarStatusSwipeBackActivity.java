@@ -134,10 +134,10 @@ public class BarStatusSwipeBackActivity extends BaseActivity {
     private void updateStatusBar() {
         if (cbAlpha.isChecked()) {
             BarUtils.setStatusBarAlpha(this, mAlpha);
-            BarUtils.addMarginTopEqualStatusBarHeight(cbAlpha);
+            BarUtils.Companion.addMarginTopEqualStatusBarHeight(cbAlpha);
         } else {
             BarUtils.setStatusBarColor(this, mColor, mAlpha);
-            BarUtils.addMarginTopEqualStatusBarHeight(cbAlpha);
+            BarUtils.Companion.addMarginTopEqualStatusBarHeight(cbAlpha);
         }
     }
 }

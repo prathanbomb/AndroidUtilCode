@@ -48,8 +48,8 @@ public class MainActivity extends BaseDrawerActivity {
         rootLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        BarUtils.setStatusBarAlpha4Drawer(this, rootLayout, fakeStatusBar, 0, false);
-        BarUtils.addMarginTopEqualStatusBarHeight(toolbar);
+        BarUtils.Companion.setStatusBarAlpha4Drawer(this, rootLayout, fakeStatusBar, 0, false);
+        BarUtils.Companion.addMarginTopEqualStatusBarHeight(toolbar);
     }
 
     @Override

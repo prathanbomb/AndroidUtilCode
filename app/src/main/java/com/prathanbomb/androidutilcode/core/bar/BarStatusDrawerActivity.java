@@ -139,10 +139,10 @@ public class BarStatusDrawerActivity extends BaseDrawerActivity {
 
     private void updateStatusBar() {
         if (cbAlpha.isChecked()) {
-            BarUtils.setStatusBarAlpha4Drawer(BarStatusDrawerActivity.this, rootLayout, fakeStatusBar, mAlpha, cbFront.isChecked());
+            BarUtils.Companion.setStatusBarAlpha4Drawer(BarStatusDrawerActivity.this, rootLayout, fakeStatusBar, mAlpha, cbFront.isChecked());
         } else {
-            BarUtils.setStatusBarColor4Drawer(BarStatusDrawerActivity.this, rootLayout, fakeStatusBar, mColor, mAlpha, cbFront.isChecked());
+            BarUtils.Companion.setStatusBarColor4Drawer(BarStatusDrawerActivity.this, rootLayout, fakeStatusBar, mColor, mAlpha, cbFront.isChecked());
         }
-        BarUtils.addMarginTopEqualStatusBarHeight(cbAlpha);// 其实这个只需要调用一次即可
+        BarUtils.Companion.addMarginTopEqualStatusBarHeight(cbAlpha);// 其实这个只需要调用一次即可
     }
 }

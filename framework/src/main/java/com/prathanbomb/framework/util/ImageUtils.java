@@ -194,7 +194,7 @@ public final class ImageUtils {
             e.printStackTrace();
             return null;
         } finally {
-            CloseUtils.closeIO(is);
+            CloseUtils.Companion.closeIO(is);
         }
     }
 
@@ -221,7 +221,7 @@ public final class ImageUtils {
             e.printStackTrace();
             return null;
         } finally {
-            CloseUtils.closeIO(is);
+            CloseUtils.Companion.closeIO(is);
         }
     }
 
@@ -1244,7 +1244,7 @@ public final class ImageUtils {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            CloseUtils.closeIO(os);
+            CloseUtils.Companion.closeIO(os);
         }
         return ret;
     }
@@ -1298,7 +1298,7 @@ public final class ImageUtils {
             e.printStackTrace();
             return null;
         } finally {
-            CloseUtils.closeIO(is);
+            CloseUtils.Companion.closeIO(is);
         }
     }
 

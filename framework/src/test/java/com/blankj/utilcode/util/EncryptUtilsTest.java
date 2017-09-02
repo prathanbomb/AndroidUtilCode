@@ -79,49 +79,49 @@ public class EncryptUtilsTest {
     public void testEncryptMD2() throws Exception {
         assertThat(encryptMD2ToString("prathanbomb")).isEqualTo(prathanbombMD2);
         assertThat(encryptMD2ToString("prathanbomb".getBytes())).isEqualTo(prathanbombMD2);
-        assertThat(encryptMD2("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombMD2));
+        assertThat(encryptMD2("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombMD2));
     }
 
     @Test
     public void testEncryptMD5() throws Exception {
         assertThat(encryptMD5ToString("prathanbomb")).isEqualTo(prathanbombMD5);
         assertThat(encryptMD5ToString("prathanbomb".getBytes())).isEqualTo(prathanbombMD5);
-        assertThat(encryptMD5("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombMD5));
+        assertThat(encryptMD5("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombMD5));
     }
 
     @Test
     public void testEncryptSHA1() throws Exception {
         assertThat(encryptSHA1ToString("prathanbomb")).isEqualTo(prathanbombSHA1);
         assertThat(encryptSHA1ToString("prathanbomb".getBytes())).isEqualTo(prathanbombSHA1);
-        assertThat(encryptSHA1("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombSHA1));
+        assertThat(encryptSHA1("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombSHA1));
     }
 
     @Test
     public void testEncryptSHA224() throws Exception {
         assertThat(encryptSHA224ToString("prathanbomb")).isEqualTo(prathanbombSHA224);
         assertThat(encryptSHA224ToString("prathanbomb".getBytes())).isEqualTo(prathanbombSHA224);
-        assertThat(encryptSHA224("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombSHA224));
+        assertThat(encryptSHA224("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombSHA224));
     }
 
     @Test
     public void testEncryptSHA256() throws Exception {
         assertThat(encryptSHA256ToString("prathanbomb")).isEqualTo(prathanbombSHA256);
         assertThat(encryptSHA256ToString("prathanbomb".getBytes())).isEqualTo(prathanbombSHA256);
-        assertThat(encryptSHA256("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombSHA256));
+        assertThat(encryptSHA256("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombSHA256));
     }
 
     @Test
     public void testEncryptSHA384() throws Exception {
         assertThat(encryptSHA384ToString("prathanbomb")).isEqualTo(prathanbombSHA384);
         assertThat(encryptSHA384ToString("prathanbomb".getBytes())).isEqualTo(prathanbombSHA384);
-        assertThat(encryptSHA384("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombSHA384));
+        assertThat(encryptSHA384("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombSHA384));
     }
 
     @Test
     public void testEncryptSHA512() throws Exception {
         assertThat(encryptSHA512ToString("prathanbomb")).isEqualTo(prathanbombSHA512);
         assertThat(encryptSHA512ToString("prathanbomb".getBytes())).isEqualTo(prathanbombSHA512);
-        assertThat(encryptSHA512("prathanbomb".getBytes())).isEqualTo(hexString2Bytes(prathanbombSHA512));
+        assertThat(encryptSHA512("prathanbomb".getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombSHA512));
     }
 
     //use this site to test https://www.freeformatter.com/hmac-generator.html
@@ -139,51 +139,51 @@ public class EncryptUtilsTest {
     public void testEncryptHmacMD5() throws Exception {
         assertThat(encryptHmacMD5ToString("prathanbomb", prathanbombHmackey)).isEqualTo(prathanbombHmacMD5);
         assertThat(encryptHmacMD5ToString("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(prathanbombHmacMD5);
-        assertThat(encryptHmacMD5("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(hexString2Bytes(prathanbombHmacMD5));
+        assertThat(encryptHmacMD5("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombHmacMD5));
     }
 
     @Test
     public void testEncryptHmacSHA1() throws Exception {
         assertThat(encryptHmacSHA1ToString("prathanbomb", prathanbombHmackey)).isEqualTo(prathanbombHmacSHA1);
         assertThat(encryptHmacSHA1ToString("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(prathanbombHmacSHA1);
-        assertThat(encryptHmacSHA1("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(hexString2Bytes(prathanbombHmacSHA1));
+        assertThat(encryptHmacSHA1("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombHmacSHA1));
     }
 
     @Test
     public void testEncryptHmacSHA224() throws Exception {
         assertThat(encryptHmacSHA224ToString("prathanbomb", prathanbombHmackey)).isEqualTo(prathanbombHmacSHA224);
         assertThat(encryptHmacSHA224ToString("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(prathanbombHmacSHA224);
-        assertThat(encryptHmacSHA224("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(hexString2Bytes(prathanbombHmacSHA224));
+        assertThat(encryptHmacSHA224("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombHmacSHA224));
     }
 
     @Test
     public void testEncryptHmacSHA256() throws Exception {
         assertThat(encryptHmacSHA256ToString("prathanbomb", prathanbombHmackey)).isEqualTo(prathanbombHmacSHA256);
         assertThat(encryptHmacSHA256ToString("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(prathanbombHmacSHA256);
-        assertThat(encryptHmacSHA256("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(hexString2Bytes(prathanbombHmacSHA256));
+        assertThat(encryptHmacSHA256("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombHmacSHA256));
     }
 
     @Test
     public void testEncryptHmacSHA384() throws Exception {
         assertThat(encryptHmacSHA384ToString("prathanbomb", prathanbombHmackey)).isEqualTo(prathanbombHmacSHA384);
         assertThat(encryptHmacSHA384ToString("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(prathanbombHmacSHA384);
-        assertThat(encryptHmacSHA384("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(hexString2Bytes(prathanbombHmacSHA384));
+        assertThat(encryptHmacSHA384("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombHmacSHA384));
     }
 
     @Test
     public void testEncryptHmacSHA512() throws Exception {
         assertThat(encryptHmacSHA512ToString("prathanbomb", prathanbombHmackey)).isEqualTo(prathanbombHmacSHA512);
         assertThat(encryptHmacSHA512ToString("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(prathanbombHmacSHA512);
-        assertThat(encryptHmacSHA512("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(hexString2Bytes(prathanbombHmacSHA512));
+        assertThat(encryptHmacSHA512("prathanbomb".getBytes(), prathanbombHmackey.getBytes())).isEqualTo(Companion.hexString2Bytes(prathanbombHmacSHA512));
     }
 
 
     private String dataDES      = "0008DB3345AB0223";
     private String keyDES       = "6801020304050607";
     private String resDES       = "1F7962581118F360";
-    private byte[] bytesDataDES = hexString2Bytes(dataDES);
-    private byte[] bytesKeyDES  = hexString2Bytes(keyDES);
-    private byte[] bytesResDES  = hexString2Bytes(resDES);
+    private byte[] bytesDataDES = Companion.hexString2Bytes(dataDES);
+    private byte[] bytesKeyDES  = Companion.hexString2Bytes(keyDES);
+    private byte[] bytesResDES  = Companion.hexString2Bytes(resDES);
 
     @Test
     public void testEncryptDES() throws Exception {
@@ -204,9 +204,9 @@ public class EncryptUtilsTest {
     String data3DES      = "1111111111111111";
     String key3DES       = "111111111111111111111111111111111111111111111111";
     String res3DES       = "F40379AB9E0EC533";
-    byte[] bytesDataDES3 = hexString2Bytes(data3DES);
-    byte[] bytesKeyDES3  = hexString2Bytes(key3DES);
-    byte[] bytesResDES3  = hexString2Bytes(res3DES);
+    byte[] bytesDataDES3 = Companion.hexString2Bytes(data3DES);
+    byte[] bytesKeyDES3  = Companion.hexString2Bytes(key3DES);
+    byte[] bytesResDES3  = Companion.hexString2Bytes(res3DES);
 
     @Test
     public void testEncrypt3DES() throws Exception {
@@ -227,9 +227,9 @@ public class EncryptUtilsTest {
     private String dataAES      = "11111111111111111111111111111111";
     private String keyAES       = "11111111111111111111111111111111";
     private String resAES       = "E56E26F5608B8D268F2556E198A0E01B";
-    private byte[] bytesDataAES = hexString2Bytes(dataAES);
-    private byte[] bytesKeyAES  = hexString2Bytes(keyAES);
-    private byte[] bytesResAES  = hexString2Bytes(resAES);
+    private byte[] bytesDataAES = Companion.hexString2Bytes(dataAES);
+    private byte[] bytesKeyAES  = Companion.hexString2Bytes(keyAES);
+    private byte[] bytesResAES  = Companion.hexString2Bytes(resAES);
 
     @Test
     public void testEncryptAES() throws Exception {

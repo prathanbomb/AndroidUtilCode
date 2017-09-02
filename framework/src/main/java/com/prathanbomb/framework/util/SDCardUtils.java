@@ -62,7 +62,7 @@ public final class SDCardUtils {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            CloseUtils.closeIO(bufferedReader);
+            CloseUtils.Companion.closeIO(bufferedReader);
         }
         return Environment.getExternalStorageDirectory().getPath() + File.separator;
     }
@@ -89,7 +89,7 @@ public final class SDCardUtils {
         long blockSize, availableBlocks;
         availableBlocks = stat.getAvailableBlocksLong();
         blockSize = stat.getBlockSizeLong();
-        return ConvertUtils.byte2FitMemorySize(availableBlocks * blockSize);
+        return ConvertUtils.Companion.byte2FitMemorySize(availableBlocks * blockSize);
     }
 
     /**

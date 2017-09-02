@@ -53,12 +53,12 @@ public class AppActivity extends BaseBackActivity {
         TextView tvAboutApp = (TextView) findViewById(R.id.tv_about_app);
         tvAboutApp.setText(
                 new SpanUtils()
-                        .append("app icon: ").appendImage(AppUtils.getAppIcon(), SpanUtils.ALIGN_CENTER).appendLine()
-                        .appendLine(AppUtils.getAppInfo().toString())
-                        .appendLine("isAppRoot: " + AppUtils.isAppRoot())
-                        .appendLine("isAppDebug: " + AppUtils.isAppDebug())
-                        .appendLine("AppSignatureSHA1: " + AppUtils.getAppSignatureSHA1())
-                        .append("isAppForeground: " + AppUtils.isAppForeground())
+                        .append("app icon: ").appendImage(AppUtils.Companion.getAppIcon(), SpanUtils.ALIGN_CENTER).appendLine()
+                        .appendLine(AppUtils.Companion.getAppInfo().toString())
+                        .appendLine("isAppRoot: " + AppUtils.Companion.isAppRoot())
+                        .appendLine("isAppDebug: " + AppUtils.Companion.isAppDebug())
+                        .appendLine("AppSignatureSHA1: " + AppUtils.Companion.getAppSignatureSHA1())
+                        .append("isAppForeground: " + AppUtils.Companion.isAppForeground())
                         .create());
     }
 
@@ -71,20 +71,20 @@ public class AppActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_install_app:
-                if (AppUtils.isInstallApp(Config.TEST_PKG)) {
+                if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
                     ToastUtils.showShort(R.string.app_install_tips);
                 } else {
-                    AppUtils.installApp(Config.getTestApkPath(), "com.prathanbomb.androidutilcode.provider");
+                    AppUtils.Companion.installApp(Config.getTestApkPath(), "com.prathanbomb.androidutilcode.provider");
                 }
                 break;
             case R.id.btn_install_app_silent:
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if (AppUtils.isInstallApp(Config.TEST_PKG)) {
+                        if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
                             ToastUtils.showShortSafe(R.string.app_install_tips);
                         } else {
-                            if (AppUtils.installAppSilent(Config.getTestApkPath())) {
+                            if (AppUtils.Companion.installAppSilent(Config.getTestApkPath())) {
                                 ToastUtils.showShortSafe(R.string.install_successfully);
                             } else {
                                 ToastUtils.showShortSafe(R.string.install_unsuccessfully);
@@ -94,15 +94,15 @@ public class AppActivity extends BaseBackActivity {
                 }).start();
                 break;
             case R.id.btn_uninstall_app:
-                if (AppUtils.isInstallApp(Config.TEST_PKG)) {
-                    AppUtils.uninstallApp(Config.TEST_PKG);
+                if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
+                    AppUtils.Companion.uninstallApp(Config.TEST_PKG);
                 } else {
                     ToastUtils.showShort(R.string.app_uninstall_tips);
                 }
                 break;
             case R.id.btn_uninstall_app_silent:
-                if (AppUtils.isInstallApp(Config.TEST_PKG)) {
-                    if (AppUtils.uninstallAppSilent(Config.TEST_PKG, false)) {
+                if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
+                    if (AppUtils.Companion.uninstallAppSilent(Config.TEST_PKG, false)) {
                         ToastUtils.showShort(R.string.uninstall_successfully);
                     } else {
                         ToastUtils.showShort(R.string.uninstall_unsuccessfully);
@@ -112,10 +112,10 @@ public class AppActivity extends BaseBackActivity {
                 }
                 break;
             case R.id.btn_launch_app:
-                AppUtils.launchApp(this.getPackageName());
+                AppUtils.Companion.launchApp(this.getPackageName());
                 break;
             case R.id.btn_exit_app:
-                AppUtils.exitApp();
+                AppUtils.Companion.exitApp();
                 break;
             case R.id.btn_get_app_details_settings:
                 AppUtils.getAppDetailsSettings();

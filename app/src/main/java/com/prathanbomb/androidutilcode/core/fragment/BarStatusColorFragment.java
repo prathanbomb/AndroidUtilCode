@@ -99,6 +99,6 @@ public class BarStatusColorFragment extends BaseFragment {
     };
 
     public void updateFakeStatusBar() {
-        BarUtils.setStatusBarColor(fakeStatusBar, mColor, mAlpha);
+        BarUtils.Companion.setStatusBarColor(fakeStatusBar, mColor, mAlpha);
     }
 }

@@ -80,14 +80,14 @@ public class CacheUtilsTest {
     public void setUp() throws Exception {
         if (mCacheUtils1 == null) {
             mCacheUtils1 = CacheUtils.getInstance(file1);
-            mCacheUtils1.put("bytes1", mBytes, 60 * CacheUtils.SEC);
-            mCacheUtils1.put("string1", mString, 60 * CacheUtils.MIN);
-            mCacheUtils1.put("jsonObject1", mJSONObject, 24 * CacheUtils.HOUR);
-            mCacheUtils1.put("jsonArray1", mJSONArray, 365 * CacheUtils.DAY);
-            mCacheUtils1.put("bitmap1", mBitmap, 60 * CacheUtils.SEC);
-            mCacheUtils1.put("drawable1", mDrawable, 60 * CacheUtils.SEC);
-            mCacheUtils1.put("parcelable1", mParcelableTest, 60 * CacheUtils.SEC);
-            mCacheUtils1.put("serializable1", mSerializableTest, 60 * CacheUtils.SEC);
+            mCacheUtils1.put("bytes1", mBytes, 60 * CacheUtils.Companion.getSEC());
+            mCacheUtils1.put("string1", mString, 60 * CacheUtils.Companion.getMIN());
+            mCacheUtils1.put("jsonObject1", mJSONObject, 24 * CacheUtils.Companion.getHOUR());
+            mCacheUtils1.put("jsonArray1", mJSONArray, 365 * CacheUtils.Companion.getDAY());
+            mCacheUtils1.put("bitmap1", mBitmap, 60 * CacheUtils.Companion.getSEC());
+            mCacheUtils1.put("drawable1", mDrawable, 60 * CacheUtils.Companion.getSEC());
+            mCacheUtils1.put("parcelable1", mParcelableTest, 60 * CacheUtils.Companion.getSEC());
+            mCacheUtils1.put("serializable1", mSerializableTest, 60 * CacheUtils.Companion.getSEC());
         }
         if (mCacheUtils2 == null) {
             mCacheUtils2 = CacheUtils.getInstance(file2);

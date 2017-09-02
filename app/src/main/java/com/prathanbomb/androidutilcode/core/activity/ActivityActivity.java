@@ -45,9 +45,9 @@ public class ActivityActivity extends BaseBackActivity {
         findViewById(R.id.btn_launch_image_activity).setOnClickListener(this);
         findViewById(R.id.btn_finish_all_activity).setOnClickListener(this);
         TextView tvAboutActivity = (TextView) findViewById(R.id.tv_about_activity);
-        tvAboutActivity.setText("Is ImageActivity Exists: " + ActivityUtils.isActivityExists(Config.PKG, ImageActivity.class.getName())
-                + "\ngetLauncherActivity: " + ActivityUtils.getLauncherActivity(Config.PKG)
-                + "\ngetTopActivity: " + ActivityUtils.getTopActivity()
+        tvAboutActivity.setText("Is ImageActivity Exists: " + ActivityUtils.Companion.isActivityExists(Config.PKG, ImageActivity.class.getName())
+                + "\ngetLauncherActivity: " + ActivityUtils.Companion.getLauncherActivity(Config.PKG)
+                + "\ngetTopActivity: " + ActivityUtils.Companion.getTopActivity()
         );
     }
 
@@ -60,10 +60,10 @@ public class ActivityActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_launch_image_activity:
-                ActivityUtils.startActivity(Config.PKG, ImageActivity.class.getName());
+                ActivityUtils.Companion.startActivity(Config.PKG, ImageActivity.class.getName());
                 break;
             case R.id.btn_finish_all_activity:
-                ActivityUtils.finishAllActivities();
+                ActivityUtils.Companion.finishAllActivities();
                 break;
         }
     }

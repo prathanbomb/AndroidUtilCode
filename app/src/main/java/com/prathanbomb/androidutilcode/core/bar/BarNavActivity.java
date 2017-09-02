@@ -43,7 +43,7 @@ public class BarNavActivity extends BaseBackActivity {
         getToolBar().setTitle(getString(R.string.demo_bar));
 
         tvAboutNav = (TextView) findViewById(R.id.tv_about_nav);
-        tvAboutNav.setText("navHeight: " + BarUtils.getNavBarHeight());
+        tvAboutNav.setText("navHeight: " + BarUtils.Companion.getNavBarHeight());
     }
 
     @Override
@@ -59,6 +59,6 @@ public class BarNavActivity extends BaseBackActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        BarUtils.hideNavBar(this);
+        BarUtils.Companion.hideNavBar(this);
     }
 }

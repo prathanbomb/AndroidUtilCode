@@ -175,7 +175,7 @@ public final class EncryptUtils {
             e.printStackTrace();
             return null;
         } finally {
-            CloseUtils.closeIO(fis);
+            CloseUtils.Companion.closeIO(fis);
         }
     }
 

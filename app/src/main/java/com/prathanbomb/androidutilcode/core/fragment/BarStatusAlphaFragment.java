@@ -86,6 +86,6 @@ public class BarStatusAlphaFragment extends BaseFragment {
     };
 
     public void updateFakeStatusBar() {
-        BarUtils.setStatusBarAlpha(fakeStatusBar, mAlpha);
+        BarUtils.Companion.setStatusBarAlpha(fakeStatusBar, mAlpha);
     }
 }
