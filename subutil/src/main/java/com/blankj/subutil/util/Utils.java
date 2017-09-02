@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.support.annotation.NonNull;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 16/12/08
  *     desc  : Utils初始化相关
  * </pre>

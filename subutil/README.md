@@ -52,14 +52,14 @@ scheduleWithFixedRate : 延迟并循环执行命令
 scheduleWithFixedDelay: 延迟并以固定休息时间循环执行命令
 ```
 
-[clipboard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/ClipboardUtils.java
-[clipboard.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/test/java/com/blankj/subutil/util/ClipboardUtilsTest.java
+[clipboard.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/subutil/src/main/java/com/prathanbomb/subutil/util/ClipboardUtils.java
+[clipboard.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/subutil/src/test/java/com/prathanbomb/subutil/util/ClipboardUtilsTest.java
 
 
-[location.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/LocationUtils.java
-[location.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/sub/location/LocationActivity.java
+[location.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/subutil/src/main/java/com/prathanbomb/subutil/util/LocationUtils.java
+[location.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/sub/location/LocationActivity.java
 
-[pinyin.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/PinyinUtils.java
-[pinyin.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/sub/pinyin/PinyinActivity.java
+[pinyin.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/subutil/src/main/java/com/prathanbomb/subutil/util/PinyinUtils.java
+[pinyin.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/sub/pinyin/PinyinActivity.java
 
-[thread_pool.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/ThreadPoolUtils.java
+[thread_pool.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/subutil/src/main/java/com/prathanbomb/subutil/util/ThreadPoolUtils.java

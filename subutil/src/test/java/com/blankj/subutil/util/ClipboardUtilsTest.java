@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,8 +13,8 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 2016/09/26
  *     desc  : ClipboardUtils单元测试
  * </pre>
@@ -35,7 +35,7 @@ public class ClipboardUtilsTest {
 
     @Test
     public void testUri() throws Exception {
-        ClipboardUtils.copyUri(Uri.parse("http://www.blankj.com"));
+        ClipboardUtils.copyUri(Uri.parse("http://www.prathanbomb.com"));
         System.out.println((ClipboardUtils.getUri()));
     }
 

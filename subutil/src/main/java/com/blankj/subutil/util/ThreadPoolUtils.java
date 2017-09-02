@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import android.support.annotation.IntDef;
 
@@ -18,8 +18,8 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 2016/08/25
  *     desc  : 线程池相关工具类
  * </pre>

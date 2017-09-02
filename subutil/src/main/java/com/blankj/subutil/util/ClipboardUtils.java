@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -8,8 +8,8 @@ import android.net.Uri;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 2016/09/25
  *     desc  : 剪贴板相关工具类
  * </pre>

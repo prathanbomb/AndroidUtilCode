@@ -618,7 +618,7 @@ getEntries
 
 Gradle:
 ``` groovy
-compile 'com.blankj:utilcode:1.8.5'
+compile 'com.prathanbomb:utilcode:1.8.5'
 ```
 
 
@@ -633,37 +633,37 @@ Utils.init(context);
 ## Proguard
 
 ```
--keep class com.blankj.utilcode.** { *; }
--keepclassmembers class com.blankj.utilcode.** { *; }
--dontwarn com.blankj.utilcode.**
+-keep class com.prathanbomb.utilcode.** { *; }
+-keepclassmembers class com.prathanbomb.utilcode.** { *; }
+-dontwarn com.prathanbomb.utilcode.**
 ```
 
 
-[logo]: https://raw.githubusercontent.com/Blankj/AndroidUtilCode/master/art/logo.png
+[logo]: https://raw.githubusercontent.com/prathanbomb/AndroidUtilCode/master/art/logo.png
 
 [aucsvg]: https://img.shields.io/badge/AndroidUtilCode-v1.8.5-brightgreen.svg
-[auc]: https://github.com/Blankj/AndroidUtilCode
+[auc]: https://github.com/prathanbomb/AndroidUtilCode
 
 [apisvg]: https://img.shields.io/badge/API-14+-brightgreen.svg
 [api]: https://android-arsenal.com/api?level=14
 
-[buildsvg]: https://travis-ci.org/Blankj/AndroidUtilCode.svg?branch=master
-[build]: https://travis-ci.org/Blankj/AndroidUtilCode
+[buildsvg]: https://travis-ci.org/prathanbomb/AndroidUtilCode.svg?branch=master
+[build]: https://travis-ci.org/prathanbomb/AndroidUtilCode
 
-[insightsvg]: https://www.insight.io/repoBadge/github.com/Blankj/AndroidUtilCode
-[insight]: https://insight.io/github.com/Blankj/AndroidUtilCode
+[insightsvg]: https://www.insight.io/repoBadge/github.com/prathanbomb/AndroidUtilCode
+[insight]: https://insight.io/github.com/prathanbomb/AndroidUtilCode
 
 [licensesvg]: https://img.shields.io/badge/License-Apache--2.0-brightgreen.svg
-[license]: https://github.com/Blankj/AndroidUtilCode/blob/master/LICENSE
+[license]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/LICENSE
 
-[jianshusvg]: https://img.shields.io/badge/简书-Blankj-34a48e.svg
+[jianshusvg]: https://img.shields.io/badge/简书-prathanbomb-34a48e.svg
 [jianshu]: http://www.jianshu.com/u/46702d5c6978
 
-[weibosvg]: https://img.shields.io/badge/weibo-__Blankj-34a48e.svg
+[weibosvg]: https://img.shields.io/badge/weibo-__prathanbomb-34a48e.svg
 [weibo]: http://weibo.com/3076228982
 
-[blogsvg]: https://img.shields.io/badge/Blog-Blankj-34a48e.svg
-[blog]: http://blankj.com
+[blogsvg]: https://img.shields.io/badge/Blog-prathanbomb-34a48e.svg
+[blog]: http://prathanbomb.com
 
 [qq0groupsvg]: https://img.shields.io/badge/QQ0群(满)-74721490-ff73a3.svg
 [qq0group]: https://shang.qq.com/wpa/qunwpa?idkey=62baf2c3ec6b0863155b0c7a10c71bba2608cb0b6532fc18515835e54c69bdd3
@@ -671,108 +671,108 @@ Utils.init(context);
 [qq1groupsvg]: https://img.shields.io/badge/QQ1群-25206533-ff73a3.svg
 [qq1group]: https://shang.qq.com/wpa/qunwpa?idkey=d906789f84484465e2736f7b524366b4c23afeda38733d5c7b10fc3f6e406e9b
 
-[readme.md]: https://github.com/Blankj/AndroidUtilCode
-[readme-cn.md]: https://github.com/Blankj/AndroidUtilCode/blob/master/README-CN.md
+[readme.md]: https://github.com/prathanbomb/AndroidUtilCode
+[readme-cn.md]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/README-CN.md
 
-[activity.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ActivityUtils.java
-[activity.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/activity/ActivityActivity.java
+[activity.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ActivityUtils.java
+[activity.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/activity/ActivityActivity.java
 
-[app.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/AppUtils.java
-[app.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/app/AppActivity.java
+[app.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/AppUtils.java
+[app.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/app/AppActivity.java
 
-[bar.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/BarUtils.java
-[bar.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/bar/BarActivity.java
+[bar.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/BarUtils.java
+[bar.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/bar/BarActivity.java
 
-[cache.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/CacheUtils.java
-[cache.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/CacheUtilsTest.java
+[cache.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/CacheUtils.java
+[cache.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/CacheUtilsTest.java
 
-[clean.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/CleanUtils.java
-[clean.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/clean/CleanActivity.java
+[clean.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/CleanUtils.java
+[clean.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/clean/CleanActivity.java
 
-[close.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/CloseUtils.java
+[close.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/CloseUtils.java
 
-[convert.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ConvertUtils.java
-[convert.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/ConvertUtilsTest.java
+[convert.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ConvertUtils.java
+[convert.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/ConvertUtilsTest.java
 
-[crash.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/CrashUtils.java
+[crash.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/CrashUtils.java
 
-[device.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/DeviceUtils.java
-[device.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/device/DeviceActivity.java
+[device.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/DeviceUtils.java
+[device.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/device/DeviceActivity.java
 
-[empty.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/EmptyUtils.java
-[empty.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/EmptyUtilsTest.java
+[empty.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/EmptyUtils.java
+[empty.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/EmptyUtilsTest.java
 
-[encode.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/EncodeUtils.java
-[encode.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/EncodeUtilsTest.java
+[encode.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/EncodeUtils.java
+[encode.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/EncodeUtilsTest.java
 
-[encrypt.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/EncryptUtils.java
-[encrypt.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/EncryptUtilsTest.java
+[encrypt.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/EncryptUtils.java
+[encrypt.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/EncryptUtilsTest.java
 
-[fileio.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/FileIOUtils.java
-[fileio.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/FileIOUtilsTest.java
+[fileio.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/FileIOUtils.java
+[fileio.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/FileIOUtilsTest.java
 
-[file.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/FileUtils.java
-[file.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/FileUtilsTest.java
+[file.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/FileUtils.java
+[file.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/FileUtilsTest.java
 
-[fragment.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/FragmentUtils.java
-[fragment.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/fragment/FragmentActivity.java
+[fragment.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/FragmentUtils.java
+[fragment.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/fragment/FragmentActivity.java
 
-[image.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ImageUtils.java
-[image.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/image/ImageActivity.java
+[image.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ImageUtils.java
+[image.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/image/ImageActivity.java
 
-[intent.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/IntentUtils.java
+[intent.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/IntentUtils.java
 
-[keyboard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/KeyboardUtils.java
-[keyboard.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/keyboard/KeyboardActivity.java
+[keyboard.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/KeyboardUtils.java
+[keyboard.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/keyboard/KeyboardActivity.java
 
-[log.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/LogUtils.java
-[log.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/log/LogActivity.java
+[log.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/LogUtils.java
+[log.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/log/LogActivity.java
 
-[network.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/NetworkUtils.java
-[network.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/network/NetworkActivity.java
+[network.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/NetworkUtils.java
+[network.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/network/NetworkActivity.java
 
-[phone.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/PhoneUtils.java
-[phone.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/phone/PhoneActivity.java
+[phone.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/PhoneUtils.java
+[phone.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/phone/PhoneActivity.java
 
-[process.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ProcessUtils.java
-[process.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/process/ProcessActivity.java
+[process.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ProcessUtils.java
+[process.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/process/ProcessActivity.java
 
-[regex.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/RegexUtils.java
-[regex.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/RegexUtilsTest.java
+[regex.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/RegexUtils.java
+[regex.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/RegexUtilsTest.java
 
-[screen.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ScreenUtils.java
+[screen.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ScreenUtils.java
 
-[sdcard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/SDCardUtils.java
-[sdcard.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/sdcard/SDCardActivity.java
+[sdcard.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/SDCardUtils.java
+[sdcard.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/sdcard/SDCardActivity.java
 
-[service.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ServiceUtils.java
+[service.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ServiceUtils.java
 
-[shell.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ShellUtils.java
+[shell.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ShellUtils.java
 
-[size.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/SizeUtils.java
+[size.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/SizeUtils.java
 
-[snackbar.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/SnackbarUtils.java
-[snackbar.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/snackbar/SnackbarActivity.java
+[snackbar.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/SnackbarUtils.java
+[snackbar.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/snackbar/SnackbarActivity.java
 
-[span.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/SpanUtils.java
-[span.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/span/SpanActivity.java
+[span.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/SpanUtils.java
+[span.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/span/SpanActivity.java
 
-[sp.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/SPUtils.java
-[sp.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/SPUtilsTest.java
+[sp.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/SPUtils.java
+[sp.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/SPUtilsTest.java
 
-[string.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/StringUtils.java
-[string.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/StringUtilsTest.java
+[string.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/StringUtils.java
+[string.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/StringUtilsTest.java
 
-[time.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/TimeUtils.java
-[time.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/TimeUtilsTest.java
+[time.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/TimeUtils.java
+[time.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/TimeUtilsTest.java
 
-[toast.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ToastUtils.java
-[toast.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/core/toast/ToastActivity.java
+[toast.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ToastUtils.java
+[toast.demo]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/app/src/main/java/com/prathanbomb/androidutilcode/core/toast/ToastActivity.java
 
-[zip.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/main/java/com/blankj/utilcode/util/ZipUtils.java
-[zip.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/src/test/java/com/blankj/utilcode/util/ZipUtilsTest.java
+[zip.java]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/main/java/com/prathanbomb/utilcode/util/ZipUtils.java
+[zip.test]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/utilcode/src/test/java/com/prathanbomb/utilcode/util/ZipUtilsTest.java
 
-[update_log.md]: https://github.com/Blankj/AndroidUtilCode/blob/master/update_log.md
+[update_log.md]: https://github.com/prathanbomb/AndroidUtilCode/blob/master/update_log.md
 
 [group]: http://www.jianshu.com/p/8938015df951
 [weibo]: http://weibo.com/blankcmj

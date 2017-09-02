@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,8 +8,8 @@ import org.robolectric.annotation.Config;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 2016/08/21
  *     desc  : 单元测试工具类
  * </pre>

@@ -8,7 +8,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.blankj.androidutilcode"
+        applicationId "com.prathanbomb.androidutilcode"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -68,7 +68,7 @@ dependencies {
 
     def leakCanary = "com.squareup.leakcanary:leakcanary-android-no-op:$LEAKCANARY_VERSION"
 
-    compile project(':utilcode')
+    compile project(':framework')
     compile project(':subutil')
 
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
@@ -83,7 +83,7 @@ dependencies {
     testCompile leakCanary
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-//    compile 'com.blankj:utilcode:1.8.4'
+//    compile 'com.prathanbomb:utilcode:1.8.4'
 }
 repositories {
     mavenCentral()

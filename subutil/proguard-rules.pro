@@ -1,6 +1,6 @@
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
-# in /Users/Blankj/Library/Android/android_sdk/tools/proguard/proguard-android.txt
+# in /Users/prathanbomb/Library/Android/android_sdk/tools/proguard/proguard-android.txt
 # You can edit the include path and order by changing the proguardFiles
 # directive in build.gradle.
 #
@@ -24,6 +24,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.blankj.subutil.** { *; }
--keepclassmembers class com.blankj.subutil.** { *; }
--dontwarn com.blankj.subutil.**
+-keep class com.prathanbomb.subutil.** { *; }
+-keepclassmembers class com.prathanbomb.subutil.** { *; }
+-dontwarn com.prathanbomb.subutil.**

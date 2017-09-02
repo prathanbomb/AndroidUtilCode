@@ -1,12 +1,12 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 2017/08/07
  *     desc  : ReflectUtils单元测试
  * </pre>

@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import android.support.annotation.NonNull;
 
@@ -16,8 +16,8 @@ import java.util.Map;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 2017/08/07
  *     desc  : 反射相关工具类
  * </pre>

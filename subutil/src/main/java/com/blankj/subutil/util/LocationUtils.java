@@ -1,4 +1,4 @@
-package com.blankj.subutil.util;
+package com.prathanbomb.subutil.util;
 
 import android.content.Intent;
 import android.location.Address;
@@ -20,8 +20,8 @@ import static android.content.Context.LOCATION_SERVICE;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: prathanbomb
+ *     blog  : http://prathanbomb.com
  *     time  : 16/11/13
  *     desc  : 定位相关工具类
  * </pre>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.blankj.androidutilcode">
+          package="com.prathanbomb.androidutilcode">
 
     <!--bar-->
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
@@ -96,7 +96,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.blankj.androidutilcode.provider"
+            android:authorities="com.prathanbomb.androidutilcode.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
