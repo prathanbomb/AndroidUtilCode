@@ -86,7 +86,7 @@ public class BarStatusAlphaActivity extends BaseActivity {
     };
 
     private void updateStatusBar() {
-        BarUtils.setStatusBarAlpha(BarStatusAlphaActivity.this, mAlpha);
+        BarUtils.Companion.setStatusBarAlpha(BarStatusAlphaActivity.this, mAlpha);
         BarUtils.Companion.addMarginTopEqualStatusBarHeight(mTvStatusAlpha);// 其实这个只需要调用一次即可
     }
 }

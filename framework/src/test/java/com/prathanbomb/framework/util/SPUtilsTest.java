@@ -1,4 +1,4 @@
-package com.prathanbomb.utilcode.util;
+package com.prathanbomb.framework.util;
 
 import com.prathanbomb.framework.util.SPUtils;
 
@@ -25,7 +25,7 @@ import java.util.Map;
 public class SPUtilsTest {
 
     static {
-        TestUtils.init();
+        TestUtils.Companion.init();
     }
     private SPUtils spUtils1;
 

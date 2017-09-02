@@ -48,7 +48,7 @@ public class FragmentActivity extends BaseBackActivity {
     public void doBusiness() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(Demo0Fragment.newInstance());
-        rootFragment = FragmentUtils.addFragments(getSupportFragmentManager(), fragments, R.id.fragment_container, 0);
+        rootFragment = FragmentUtils.Companion.addFragments(getSupportFragmentManager(), fragments, R.id.fragment_container, 0);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class FragmentActivity extends BaseBackActivity {
 
     @Override
     public void onBackPressed() {
-        if (!FragmentUtils.dispatchBackPress(getSupportFragmentManager())) {
+        if (!FragmentUtils.Companion.dispatchBackPress(getSupportFragmentManager())) {
             super.onBackPressed();
         }
     }

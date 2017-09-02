@@ -1,16 +1,14 @@
-package com.prathanbomb.utilcode.util;
+package com.prathanbomb.framework.util
 
 /**
  * <pre>
- *     author: prathanbomb
- *     blog  : http://prathanbomb.com
- *     time  : 2016/09/10
- *     desc  : ZipUtils单元测试
- * </pre>
+ * author: prathanbomb
+ * blog  : http://prathanbomb.com
+ * time  : 2016/09/10
+ * desc  : ZipUtils单元测试
+</pre> *
  */
-public class ZipUtilsTest {
-
-//    String testZip = TestUtils.TEST_PATH() + FILE_SEP + "zip" + FILE_SEP + "testZip" + FILE_SEP;
+class ZipUtilsTest//    String testZip = TestUtils.TEST_PATH() + FILE_SEP + "zip" + FILE_SEP + "testZip" + FILE_SEP;
 //    String testZipFiles = TestUtils.TEST_PATH() + FILE_SEP + "zip" + FILE_SEP + "testZips.zip";
 //    String testZipFile = TestUtils.TEST_PATH() + FILE_SEP + "zip" + FILE_SEP + "testZip.zip";
 //    String unzipFile = TestUtils.TEST_PATH() + FILE_SEP + "zip" + FILE_SEP + "testUnzip";
@@ -55,4 +53,3 @@ public class ZipUtilsTest {
 //    public void testGetComments() throws Exception {
 //        System.out.println(getComments(testZipFile));
 //    }
-}

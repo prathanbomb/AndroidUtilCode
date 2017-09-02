@@ -43,7 +43,7 @@ public class Demo1Fragment extends BaseFragment {
     @Override
     public void initView(Bundle savedInstanceState, View view) {
         Random random = new Random();
-        FragmentUtils.setBackgroundColor(this, Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
+        FragmentUtils.Companion.setBackgroundColor(this, Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
         view.findViewById(R.id.btn_show_about_fragment).setOnClickListener(this);
         view.findViewById(R.id.btn_hide_show).setOnClickListener(this);
         tvAboutFragment = (TextView) view.findViewById(R.id.tv_about_fragment);
@@ -59,20 +59,20 @@ public class Demo1Fragment extends BaseFragment {
         tvAboutFragment.setText("");
         switch (view.getId()) {
             case R.id.btn_show_about_fragment:
-                tvAboutFragment.setText("lastAdd: " + FragmentUtils.getLastAddFragment(getFragmentManager()).getClass().getSimpleName()
-                        + "\nlastAddInStack: " + (FragmentUtils.getLastAddFragmentInStack(getFragmentManager()) != null ? FragmentUtils.getLastAddFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
-                        + "\ntopShow: " + FragmentUtils.getTopShowFragment(getFragmentManager()).getClass().getSimpleName()
-                        + "\ntopShowInStack: " + (FragmentUtils.getTopShowFragmentInStack(getFragmentManager()) != null ? FragmentUtils.getTopShowFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
+                tvAboutFragment.setText("lastAdd: " + FragmentUtils.Companion.getLastAddFragment(getFragmentManager()).getClass().getSimpleName()
+                        + "\nlastAddInStack: " + (FragmentUtils.Companion.getLastAddFragmentInStack(getFragmentManager()) != null ? FragmentUtils.Companion.getLastAddFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
+                        + "\ntopShow: " + FragmentUtils.Companion.getTopShowFragment(getFragmentManager()).getClass().getSimpleName()
+                        + "\ntopShowInStack: " + (FragmentUtils.Companion.getTopShowFragmentInStack(getFragmentManager()) != null ? FragmentUtils.Companion.getTopShowFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
                         + "\n---all of fragments---\n"
-                        + FragmentUtils.getAllFragments(getFragmentManager()).toString()
+                        + FragmentUtils.Companion.getAllFragments(getFragmentManager()).toString()
                         + "\n----------------------\n\n"
                         + "---stack top---\n"
-                        + FragmentUtils.getAllFragmentsInStack(getFragmentManager()).toString()
+                        + FragmentUtils.Companion.getAllFragmentsInStack(getFragmentManager()).toString()
                         + "\n---stack bottom---\n\n"
                 );
                 break;
             case R.id.btn_hide_show:
-                FragmentUtils.hideAllShowFragment(((FragmentActivity) getActivity()).rootFragment);
+                FragmentUtils.Companion.hideAllShowFragment(((FragmentActivity) getActivity()).rootFragment);
                 break;
         }
     }

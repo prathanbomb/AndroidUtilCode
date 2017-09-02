@@ -46,8 +46,8 @@ public class ProcessActivity extends BaseBackActivity {
 
         findViewById(R.id.btn_kill_all_background_processes).setOnClickListener(this);
         tvAboutProcess = (TextView) findViewById(R.id.tv_about_process);
-        Set<String> set = ProcessUtils.getAllBackgroundProcesses();
-        tvAboutProcess.setText("getForegroundProcessName: " + ProcessUtils.getForegroundProcessName()
+        Set<String> set = ProcessUtils.Companion.getAllBackgroundProcesses();
+        tvAboutProcess.setText("getForegroundProcessName: " + ProcessUtils.Companion.getForegroundProcessName()
                 + "\n\ngetAllBackgroundProcesses: " + getSetItems(set)
                 + "\nsize: " + set.size());
     }
@@ -61,9 +61,9 @@ public class ProcessActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_kill_all_background_processes:
-                Set<String> set = ProcessUtils.getAllBackgroundProcesses();
-                Set<String> set1 = ProcessUtils.killAllBackgroundProcesses();
-                tvAboutProcess.setText("getForegroundProcessName: " + ProcessUtils.getForegroundProcessName()
+                Set<String> set = ProcessUtils.Companion.getAllBackgroundProcesses();
+                Set<String> set1 = ProcessUtils.Companion.killAllBackgroundProcesses();
+                tvAboutProcess.setText("getForegroundProcessName: " + ProcessUtils.Companion.getForegroundProcessName()
                         + "\n\ngetAllBackgroundProcesses: " + getSetItems(set)
                         + "\nsize: " + set.size()
                         + "\n\nkillAllBackgroundProcesses: " + getSetItems(set1)

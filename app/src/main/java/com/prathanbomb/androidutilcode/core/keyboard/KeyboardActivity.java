@@ -67,16 +67,16 @@ public class KeyboardActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_hide_soft_input:
-                KeyboardUtils.hideSoftInput(this);
+                KeyboardUtils.Companion.hideSoftInput(this);
                 break;
             case R.id.btn_show_soft_input:
-                KeyboardUtils.showSoftInput(this);
+                KeyboardUtils.Companion.showSoftInput(this);
                 break;
             case R.id.btn_toggle_soft_input:
-                KeyboardUtils.toggleSoftInput();
+                KeyboardUtils.Companion.toggleSoftInput();
                 break;
             case R.id.btn_keyboard_in_fragment:
-                KeyboardUtils.hideSoftInput(this);
+                KeyboardUtils.Companion.hideSoftInput(this);
                 new KeyboardDialog(this).show();
                 break;
         }

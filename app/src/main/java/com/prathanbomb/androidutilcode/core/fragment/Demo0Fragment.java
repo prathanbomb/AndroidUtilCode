@@ -54,7 +54,7 @@ public class Demo0Fragment extends BaseFragment
     @Override
     public void initView(Bundle savedInstanceState, View view) {
         Random random = new Random();
-        FragmentUtils.setBackgroundColor(this, Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
+        FragmentUtils.Companion.setBackgroundColor(this, Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
         btnShowAboutFragment = (Button) view.findViewById(R.id.btn_show_about_fragment);
         btnShowAboutFragment.setOnClickListener(this);
         view.findViewById(R.id.btn_add_hide).setOnClickListener(this);
@@ -83,20 +83,20 @@ public class Demo0Fragment extends BaseFragment
         tvAboutFragment.setText("");
         switch (view.getId()) {
             case R.id.btn_show_about_fragment:
-                tvAboutFragment.setText("lastAdd: " + FragmentUtils.getLastAddFragment(getFragmentManager()).getClass().getSimpleName()
-                        + "\nlastAddInStack: " + (FragmentUtils.getLastAddFragmentInStack(getFragmentManager()) != null ? FragmentUtils.getLastAddFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
-                        + "\ntopShow: " + (FragmentUtils.getTopShowFragment(getFragmentManager()) != null ? FragmentUtils.getTopShowFragment(getFragmentManager()).getClass().getSimpleName() : "null")
-                        + "\ntopShowInStack: " + (FragmentUtils.getTopShowFragmentInStack(getFragmentManager()) != null ? FragmentUtils.getTopShowFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
+                tvAboutFragment.setText("lastAdd: " + FragmentUtils.Companion.getLastAddFragment(getFragmentManager()).getClass().getSimpleName()
+                        + "\nlastAddInStack: " + (FragmentUtils.Companion.getLastAddFragmentInStack(getFragmentManager()) != null ? FragmentUtils.Companion.getLastAddFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
+                        + "\ntopShow: " + (FragmentUtils.Companion.getTopShowFragment(getFragmentManager()) != null ? FragmentUtils.Companion.getTopShowFragment(getFragmentManager()).getClass().getSimpleName() : "null")
+                        + "\ntopShowInStack: " + (FragmentUtils.Companion.getTopShowFragmentInStack(getFragmentManager()) != null ? FragmentUtils.Companion.getTopShowFragmentInStack(getFragmentManager()).getClass().getSimpleName() : "null")
                         + "\n---all of fragments---\n"
-                        + FragmentUtils.getAllFragments(getFragmentManager()).toString()
+                        + FragmentUtils.Companion.getAllFragments(getFragmentManager()).toString()
                         + "\n----------------------\n\n"
                         + "---stack top---\n"
-                        + FragmentUtils.getAllFragmentsInStack(getFragmentManager()).toString()
+                        + FragmentUtils.Companion.getAllFragmentsInStack(getFragmentManager()).toString()
                         + "\n---stack bottom---\n\n"
                 );
                 break;
             case R.id.btn_add_hide:
-                FragmentUtils.hideAddFragment(getFragmentManager(),
+                FragmentUtils.Companion.hideAddFragment(getFragmentManager(),
                         demo0Fragment,
                         addSharedElement(Demo1Fragment.newInstance()),
                         R.id.fragment_container,
@@ -105,7 +105,7 @@ public class Demo0Fragment extends BaseFragment
                         sharedElement);
                 break;
             case R.id.btn_add_show:
-                FragmentUtils.addFragment(getFragmentManager(),
+                FragmentUtils.Companion.addFragment(getFragmentManager(),
                         addSharedElement(Demo1Fragment.newInstance()),
                         R.id.fragment_container,
                         false,
@@ -113,34 +113,34 @@ public class Demo0Fragment extends BaseFragment
                         sharedElement);
                 break;
             case R.id.btn_add_child:
-                FragmentUtils.addFragment(getChildFragmentManager(),
+                FragmentUtils.Companion.addFragment(getChildFragmentManager(),
                         Demo2Fragment.newInstance(),
                         R.id.child_fragment_container,
                         false,
                         true);
                 break;
             case R.id.btn_pop_to_root:
-                FragmentUtils.popToFragment(getFragmentManager(),
+                FragmentUtils.Companion.popToFragment(getFragmentManager(),
                         Demo1Fragment.class,
                         true);
                 break;
             case R.id.btn_pop_add:
-                FragmentUtils.popAddFragment(getFragmentManager(),
+                FragmentUtils.Companion.popAddFragment(getFragmentManager(),
                         addSharedElement(Demo2Fragment.newInstance()),
                         R.id.fragment_container,
                         true,
                         sharedElement);
                 break;
             case R.id.btn_hide_show:
-                Fragment fragment1 = FragmentUtils.findFragment(getFragmentManager(), Demo1Fragment.class);
+                Fragment fragment1 = FragmentUtils.Companion.findFragment(getFragmentManager(), Demo1Fragment.class);
                 if (fragment1 != null) {
-                    FragmentUtils.hideShowFragment(this, fragment1);
+                    FragmentUtils.Companion.hideShowFragment(this, fragment1);
                 } else {
                     ToastUtils.showLong("please add demo1 first!");
                 }
                 break;
             case R.id.btn_replace:
-                ((FragmentActivity) getActivity()).rootFragment = FragmentUtils.replaceFragment(this, addSharedElement(Demo3Fragment.newInstance()), false, sharedElement);
+                ((FragmentActivity) getActivity()).rootFragment = FragmentUtils.Companion.replaceFragment(this, addSharedElement(Demo3Fragment.newInstance()), false, sharedElement);
                 break;
         }
     }

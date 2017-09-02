@@ -101,7 +101,7 @@ public class BarStatusColorActivity extends BaseActivity {
     };
 
     private void updateStatusBar() {
-        BarUtils.setStatusBarColor(this, mColor, mAlpha);
+        BarUtils.Companion.setStatusBarColor(this, mColor, mAlpha);
         BarUtils.Companion.addMarginTopEqualStatusBarHeight(mTvStatusAlpha);// 其实这个只需要调用一次即可
     }
 }

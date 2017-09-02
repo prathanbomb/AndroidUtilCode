@@ -1,4 +1,4 @@
-package com.prathanbomb.utilcode.util;
+package com.prathanbomb.framework.util;
 
 import org.junit.Test;
 

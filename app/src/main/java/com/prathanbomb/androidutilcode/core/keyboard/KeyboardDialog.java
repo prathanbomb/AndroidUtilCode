@@ -43,7 +43,7 @@ public class KeyboardDialog implements View.OnClickListener {
             dialogView.findViewById(R.id.btn_toggle_soft_input).setOnClickListener(this);
             dialogView.findViewById(R.id.btn_close_dialog).setOnClickListener(this);
             dialog.show();
-            KeyboardUtils.showSoftInput(activity);
+            KeyboardUtils.Companion.showSoftInput(activity);
         }
     }
 
@@ -51,16 +51,16 @@ public class KeyboardDialog implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_hide_soft_input:
-                KeyboardUtils.hideSoftInput(etInput);
+                KeyboardUtils.Companion.hideSoftInput(etInput);
                 break;
             case R.id.btn_show_soft_input:
-                KeyboardUtils.showSoftInput(etInput);
+                KeyboardUtils.Companion.showSoftInput(etInput);
                 break;
             case R.id.btn_toggle_soft_input:
-                KeyboardUtils.toggleSoftInput();
+                KeyboardUtils.Companion.toggleSoftInput();
                 break;
             case R.id.btn_close_dialog:
-                KeyboardUtils.hideSoftInput(etInput);
+                KeyboardUtils.Companion.hideSoftInput(etInput);
                 dialog.dismiss();
                 break;
         }

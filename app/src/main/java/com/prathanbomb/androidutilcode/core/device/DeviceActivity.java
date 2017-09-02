@@ -43,13 +43,13 @@ public class DeviceActivity extends BaseBackActivity {
         findViewById(R.id.btn_reboot).setOnClickListener(this);
         findViewById(R.id.btn_reboot_to_recovery).setOnClickListener(this);
         findViewById(R.id.btn_reboot_to_bootloader).setOnClickListener(this);
-        TextView tvAboutDevice = (TextView) findViewById(R.id.tv_about_device);
-        tvAboutDevice.setText("isRoot: " + DeviceUtils.isDeviceRooted()
-                + "\ngetSDKVersion: " + DeviceUtils.getSDKVersion()
-                + "\ngetAndroidID: " + DeviceUtils.getAndroidID()
-                + "\ngetMacAddress: " + DeviceUtils.getMacAddress()
-                + "\ngetManufacturer: " + DeviceUtils.getManufacturer()
-                + "\ngetModel: " + DeviceUtils.getModel()
+        TextView tvAboutDevice = findViewById(R.id.tv_about_device);
+        tvAboutDevice.setText("isRoot: " + DeviceUtils.Companion.isDeviceRooted()
+                + "\ngetSDKVersion: " + DeviceUtils.Companion.getSdkVersion()
+                + "\ngetAndroidID: " + DeviceUtils.Companion.getAndroidID()
+                + "\ngetMacAddress: " + DeviceUtils.Companion.getMacAddress()
+                + "\ngetManufacturer: " + DeviceUtils.Companion.getManufacturer()
+                + "\ngetModel: " + DeviceUtils.Companion.getModel()
         );
     }
 
@@ -62,16 +62,16 @@ public class DeviceActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_shutdown:
-                DeviceUtils.shutdown();
+                DeviceUtils.Companion.shutdown();
                 break;
             case R.id.btn_reboot:
-                DeviceUtils.reboot();
+                DeviceUtils.Companion.reboot();
                 break;
             case R.id.btn_reboot_to_recovery:
-                DeviceUtils.reboot2Recovery();
+                DeviceUtils.Companion.reboot2Recovery();
                 break;
             case R.id.btn_reboot_to_bootloader:
-                DeviceUtils.reboot2Bootloader();
+                DeviceUtils.Companion.reboot2Bootloader();
                 break;
         }
     }

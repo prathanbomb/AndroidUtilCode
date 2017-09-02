@@ -519,7 +519,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
             } catch (e: IOException) {
                 e.printStackTrace()
             } finally {
-                CloseUtils.closeIO(fc)
+                CloseUtils.closeIO(fc!!)
             }
         }
 
@@ -536,7 +536,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
                 e.printStackTrace()
                 null
             } finally {
-                CloseUtils.closeIO(fc)
+                CloseUtils.closeIO(fc!!)
             }
         }
 
@@ -610,7 +610,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
                 e.printStackTrace()
                 null
             } finally {
-                CloseUtils.closeIO(oos)
+                CloseUtils.closeIO(oos!!)
             }
         }
 
@@ -624,7 +624,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
                 e.printStackTrace()
                 null
             } finally {
-                CloseUtils.closeIO(ois)
+                CloseUtils.closeIO(ois!!)
             }
         }
 
@@ -636,7 +636,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
         }
 
         internal fun bytes2Bitmap(bytes: ByteArray?): Bitmap? {
-            return if (bytes == null || bytes.size == 0) null else BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+            return if (bytes == null || bytes.isEmpty()) null else BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
         }
 
         internal fun drawable2Bytes(drawable: Drawable?): ByteArray? {

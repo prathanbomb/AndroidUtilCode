@@ -526,7 +526,7 @@ class AppUtils private constructor() {
          * @return `true`: 是<br></br>`false`: 否
          */
         fun isAppForeground(packageName: String): Boolean {
-            return !isSpace(packageName) && packageName == ProcessUtils.getForegroundProcessName()
+            return !isSpace(packageName) && packageName == ProcessUtils.foregroundProcessName
         }
 
         /**
@@ -629,7 +629,7 @@ class AppUtils private constructor() {
             isSuccess = isSuccess and CleanUtils.cleanInternalFiles()
             isSuccess = isSuccess and CleanUtils.cleanExternalCache()
             for (dir in dirs) {
-                isSuccess = isSuccess and CleanUtils.cleanCustomCache(dir)
+                isSuccess = isSuccess and CleanUtils.cleanCustomCache(dir!!)
             }
             return isSuccess
         }

@@ -44,14 +44,14 @@ public class PhoneActivity extends BaseBackActivity {
         findViewById(R.id.btn_send_sms).setOnClickListener(this);
         findViewById(R.id.btn_send_sms_silent).setOnClickListener(this);
         TextView tvAboutPhone = (TextView) findViewById(R.id.tv_about_phone);
-        tvAboutPhone.setText("isPhone: " + PhoneUtils.isPhone()
-                + "\ngetIMEI: " + PhoneUtils.getIMEI()
-                + "\ngetIMSI: " + PhoneUtils.getIMSI()
-                + "\ngetPhoneType: " + PhoneUtils.getPhoneType()
-                + "\nisSimCardReady: " + PhoneUtils.isSimCardReady()
-                + "\ngetSimOperatorName: " + PhoneUtils.getSimOperatorName()
-                + "\ngetSimOperatorByMnc: " + PhoneUtils.getSimOperatorByMnc()
-                + "\n获取手机状态信息: " + PhoneUtils.getPhoneStatus()
+        tvAboutPhone.setText("isPhone: " + PhoneUtils.Companion.isPhone()
+                + "\ngetIMEI: " + PhoneUtils.Companion.getImei()
+                + "\ngetIMSI: " + PhoneUtils.Companion.getImsi()
+                + "\ngetPhoneType: " + PhoneUtils.Companion.getPhoneType()
+                + "\nisSimCardReady: " + PhoneUtils.Companion.isSimCardReady()
+                + "\ngetSimOperatorName: " + PhoneUtils.Companion.getSimOperatorName()
+                + "\ngetSimOperatorByMnc: " + PhoneUtils.Companion.getSimOperatorByMnc()
+                + "\n获取手机状态信息: " + PhoneUtils.Companion.getPhoneStatus()
         );
     }
 
@@ -64,16 +64,16 @@ public class PhoneActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_dial:
-                PhoneUtils.dial("10000");
+                PhoneUtils.Companion.dial("10000");
                 break;
             case R.id.btn_call:
-                PhoneUtils.call("10000");
+                PhoneUtils.Companion.call("10000");
                 break;
             case R.id.btn_send_sms:
-                PhoneUtils.sendSms("10000", "test");
+                PhoneUtils.Companion.sendSms("10000", "test");
                 break;
             case R.id.btn_send_sms_silent:
-                PhoneUtils.sendSmsSilent("10000", "test");
+                PhoneUtils.Companion.sendSmsSilent("10000", "test");
                 break;
         }
     }

@@ -56,29 +56,29 @@ public class NetworkActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_open_wireless_settings:
-                NetworkUtils.openWirelessSettings();
+                NetworkUtils.Companion.openWirelessSettings();
                 break;
             case R.id.btn_set_data_enabled:
-                NetworkUtils.setDataEnabled(!NetworkUtils.getDataEnabled());
+                NetworkUtils.Companion.setDataEnabled(!NetworkUtils.Companion.getDataEnabled());
                 break;
             case R.id.btn_set_wifi_enabled:
-                NetworkUtils.setWifiEnabled(!NetworkUtils.getWifiEnabled());
+                NetworkUtils.Companion.setWifiEnabled(!NetworkUtils.Companion.getWifiEnabled());
                 break;
         }
         setAboutNetwork();
     }
 
     private void setAboutNetwork() {
-        tvAboutNetwork.setText("isConnected: " + NetworkUtils.isConnected()
-                + "\ngetDataEnabled: " + NetworkUtils.getDataEnabled()
-                + "\nis4G: " + NetworkUtils.is4G()
-                + "\ngetWifiEnabled: " + NetworkUtils.getWifiEnabled()
-                + "\nisWifiConnected: " + NetworkUtils.isWifiConnected()
-                + "\nisWifiAvailable: " + NetworkUtils.isWifiAvailable()
-                + "\nisAvailableByPing: " + NetworkUtils.isAvailableByPing()
-                + "\ngetNetworkOperatorName: " + NetworkUtils.getNetworkOperatorName()
-                + "\ngetNetworkTypeName: " + NetworkUtils.getNetworkType()
-                + "\ngetIPAddress: " + NetworkUtils.getIPAddress(true)
+        tvAboutNetwork.setText("isConnected: " + NetworkUtils.Companion.isConnected()
+                + "\ngetDataEnabled: " + NetworkUtils.Companion.getDataEnabled()
+                + "\nis4G: " + NetworkUtils.Companion.is4G()
+                + "\ngetWifiEnabled: " + NetworkUtils.Companion.getWifiEnabled()
+                + "\nisWifiConnected: " + NetworkUtils.Companion.isWifiConnected()
+                + "\nisWifiAvailable: " + NetworkUtils.Companion.isWifiAvailable()
+                + "\nisAvailableByPing: " + NetworkUtils.Companion.isAvailableByPing()
+                + "\ngetNetworkOperatorName: " + NetworkUtils.Companion.getNetworkOperatorName()
+                + "\ngetNetworkTypeName: " + NetworkUtils.Companion.getNetworkType()
+                + "\ngetIPAddress: " + NetworkUtils.Companion.getIPAddress(true)
 //                + "\ngetDomainAddress: " + NetworkUtils.getDomainAddress("baidu.com")
         );
     }

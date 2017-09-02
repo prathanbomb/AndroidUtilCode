@@ -118,7 +118,7 @@ public class AppActivity extends BaseBackActivity {
                 AppUtils.Companion.exitApp();
                 break;
             case R.id.btn_get_app_details_settings:
-                AppUtils.getAppDetailsSettings();
+                AppUtils.Companion.getAppDetailsSettings();
                 break;
         }
     }
