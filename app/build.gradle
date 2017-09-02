@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 File signPropertiesFile = rootProject.file('sign/keystore.properties')
 
@@ -55,6 +56,10 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 dependencies {
@@ -76,8 +81,12 @@ dependencies {
     debugCompile "com.squareup.leakcanary:leakcanary-android:$LEAKCANARY_VERSION"
     releaseCompile leakCanary
     testCompile leakCanary
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
 //    compile 'com.blankj:utilcode:1.8.4'
+}
+repositories {
+    mavenCentral()
 }
 
 

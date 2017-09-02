@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'jacoco'
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
@@ -61,6 +62,10 @@ dependencies {
     testCompile "junit:junit:$rootProject.ext.junitVersion"
     testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
     testCompile "com.google.truth:truth:0.31"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
 //apply from: "https://raw.githubusercontent.com/xiaopansky/android-library-publish-to-jcenter/master/bintrayUpload.gradle"
 //gradle bintrayUpload

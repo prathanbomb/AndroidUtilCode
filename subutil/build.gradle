@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'jacoco'
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
@@ -60,4 +61,8 @@ dependencies {
 
     testCompile "junit:junit:$rootProject.ext.junitVersion"
     testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
