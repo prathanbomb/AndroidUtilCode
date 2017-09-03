@@ -39,7 +39,7 @@ class ProcessUtils private constructor() {
         // 有"有权查看使用权限的应用"选项
         val foregroundProcessName: String?
             get() {
-                val manager = Utils.getApp().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+                val manager = Utils.app.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
                 val pInfo = manager.runningAppProcesses
                 if (pInfo != null && pInfo.size != 0) {
                     pInfo
@@ -47,22 +47,22 @@ class ProcessUtils private constructor() {
                             .forEach { return it.processName }
                 }
                 if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    val packageManager = Utils.getApp().packageManager
+                    val packageManager = Utils.app.packageManager
                     val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
                     val list = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
                     println(list)
                     if (list.size > 0) {
                         try {
-                            val info = packageManager.getApplicationInfo(Utils.getApp().packageName, 0)
-                            val aom = Utils.getApp().getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager
+                            val info = packageManager.getApplicationInfo(Utils.app.packageName, 0)
+                            val aom = Utils.app.getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager
                             if (aom.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, info.uid, info.packageName) != AppOpsManager.MODE_ALLOWED) {
-                                Utils.getApp().startActivity(intent)
+                                Utils.app.startActivity(intent)
                             }
                             if (aom.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, info.uid, info.packageName) != AppOpsManager.MODE_ALLOWED) {
                                 LogUtils.d("getForegroundApp", "没有打开\"有权查看使用权限的应用\"选项")
                                 return null
                             }
-                            val usageStatsManager = Utils.getApp().getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
+                            val usageStatsManager = Utils.app.getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
                             val endTime = System.currentTimeMillis()
                             val beginTime = endTime - 86400000 * 7
                             val usageStatses = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST, beginTime, endTime)
@@ -94,7 +94,7 @@ class ProcessUtils private constructor() {
          */
         val allBackgroundProcesses: Set<String>
             get() {
-                val am = Utils.getApp().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+                val am = Utils.app.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
                 val info = am.runningAppProcesses
                 val set = HashSet<String>()
                 for (aInfo in info) {
@@ -112,7 +112,7 @@ class ProcessUtils private constructor() {
          * @return 被暂时杀死的服务集合
          */
         fun killAllBackgroundProcesses(): Set<String> {
-            val am = Utils.getApp().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val am = Utils.app.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
             var info: List<ActivityManager.RunningAppProcessInfo> = am.runningAppProcesses
             val set = HashSet<String>()
             for (aInfo in info) {
@@ -140,7 +140,7 @@ class ProcessUtils private constructor() {
          * @return `true`: 杀死成功<br></br>`false`: 杀死失败
          */
         fun killBackgroundProcesses(packageName: String): Boolean {
-            val am = Utils.getApp().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val am = Utils.app.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
             var info: List<ActivityManager.RunningAppProcessInfo>? = am.runningAppProcesses
             if (info == null || info.isEmpty()) return true
             info

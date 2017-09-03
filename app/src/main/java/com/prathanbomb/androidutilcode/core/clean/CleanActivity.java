@@ -72,19 +72,19 @@ public class CleanActivity extends BaseBackActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_clean_internal_cache:
-                ToastUtils.showShort("cleanInternalCache" + CleanUtils.Companion.cleanInternalCache());
+                ToastUtils.Companion.showShort("cleanInternalCache" + CleanUtils.Companion.cleanInternalCache());
                 break;
             case R.id.btn_clean_internal_files:
-                ToastUtils.showShort("cleanInternalFiles" + CleanUtils.Companion.cleanInternalFiles());
+                ToastUtils.Companion.showShort("cleanInternalFiles" + CleanUtils.Companion.cleanInternalFiles());
                 break;
             case R.id.btn_clean_internal_databases:
-                ToastUtils.showShort("cleanInternalDbs" + CleanUtils.Companion.cleanInternalDbs());
+                ToastUtils.Companion.showShort("cleanInternalDbs" + CleanUtils.Companion.cleanInternalDbs());
                 break;
             case R.id.btn_clean_internal_sp:
-                ToastUtils.showShort("cleanInternalSP" + CleanUtils.Companion.cleanInternalSP());
+                ToastUtils.Companion.showShort("cleanInternalSP" + CleanUtils.Companion.cleanInternalSP());
                 break;
             case R.id.btn_clean_external_cache:
-                ToastUtils.showShort("cleanExternalCache" + CleanUtils.Companion.cleanExternalCache());
+                ToastUtils.Companion.showShort("cleanExternalCache" + CleanUtils.Companion.cleanExternalCache());
                 break;
         }
     }

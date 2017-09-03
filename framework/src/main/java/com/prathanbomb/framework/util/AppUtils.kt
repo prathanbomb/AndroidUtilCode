@@ -103,7 +103,7 @@ class AppUtils private constructor() {
          */
         fun installApp(file: File?, authority: String) {
             if (!FileUtils.isFileExists(file)) return
-            Utils.getApp().startActivity(IntentUtils.getInstallAppIntent(file, authority))
+            Utils.app.startActivity(IntentUtils.getInstallAppIntent(file, authority))
         }
 
         /**
@@ -156,7 +156,7 @@ class AppUtils private constructor() {
          */
         fun uninstallApp(packageName: String) {
             if (isSpace(packageName)) return
-            Utils.getApp().startActivity(IntentUtils.getUninstallAppIntent(packageName))
+            Utils.app.startActivity(IntentUtils.getUninstallAppIntent(packageName))
         }
 
         /**
@@ -212,7 +212,7 @@ class AppUtils private constructor() {
          */
         fun launchApp(packageName: String) {
             if (isSpace(packageName)) return
-            Utils.getApp().startActivity(IntentUtils.getLaunchAppIntent(packageName))
+            Utils.app.startActivity(IntentUtils.getLaunchAppIntent(packageName))
         }
 
         /**
@@ -245,7 +245,7 @@ class AppUtils private constructor() {
          * @return App包名
          */
         val appPackageName: String
-            get() = Utils.getApp().packageName
+            get() = Utils.app.packageName
 
         /**
          * 获取App具体设置
@@ -253,9 +253,9 @@ class AppUtils private constructor() {
          * @param packageName 包名
          */
         @JvmOverloads
-        fun getAppDetailsSettings(packageName: String = Utils.getApp().packageName) {
+        fun getAppDetailsSettings(packageName: String = Utils.app.packageName) {
             if (isSpace(packageName)) return
-            Utils.getApp().startActivity(IntentUtils.getAppDetailsSettingsIntent(packageName))
+            Utils.app.startActivity(IntentUtils.getAppDetailsSettingsIntent(packageName))
         }
 
         /**
@@ -264,7 +264,7 @@ class AppUtils private constructor() {
          * @return App名称
          */
         val appName: String?
-            get() = getAppName(Utils.getApp().packageName)
+            get() = getAppName(Utils.app.packageName)
 
         /**
          * 获取App名称
@@ -275,7 +275,7 @@ class AppUtils private constructor() {
         fun getAppName(packageName: String): String? {
             if (isSpace(packageName)) return null
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val pi = pm.getPackageInfo(packageName, 0)
                 return pi?.applicationInfo?.loadLabel(pm)?.toString()
             } catch (e: PackageManager.NameNotFoundException) {
@@ -291,7 +291,7 @@ class AppUtils private constructor() {
          * @return App图标
          */
         val appIcon: Drawable?
-            get() = getAppIcon(Utils.getApp().packageName)
+            get() = getAppIcon(Utils.app.packageName)
 
         /**
          * 获取App图标
@@ -302,7 +302,7 @@ class AppUtils private constructor() {
         fun getAppIcon(packageName: String): Drawable? {
             if (isSpace(packageName)) return null
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val pi = pm.getPackageInfo(packageName, 0)
                 return pi?.applicationInfo?.loadIcon(pm)
             } catch (e: PackageManager.NameNotFoundException) {
@@ -318,7 +318,7 @@ class AppUtils private constructor() {
          * @return App路径
          */
         val appPath: String?
-            get() = getAppPath(Utils.getApp().packageName)
+            get() = getAppPath(Utils.app.packageName)
 
         /**
          * 获取App路径
@@ -329,7 +329,7 @@ class AppUtils private constructor() {
         fun getAppPath(packageName: String): String? {
             if (isSpace(packageName)) return null
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val pi = pm.getPackageInfo(packageName, 0)
                 return pi?.applicationInfo?.sourceDir
             } catch (e: PackageManager.NameNotFoundException) {
@@ -345,7 +345,7 @@ class AppUtils private constructor() {
          * @return App版本号
          */
         val appVersionName: String?
-            get() = getAppVersionName(Utils.getApp().packageName)
+            get() = getAppVersionName(Utils.app.packageName)
 
         /**
          * 获取App版本号
@@ -356,7 +356,7 @@ class AppUtils private constructor() {
         fun getAppVersionName(packageName: String): String? {
             if (isSpace(packageName)) return null
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val pi = pm.getPackageInfo(packageName, 0)
                 return pi?.versionName
             } catch (e: PackageManager.NameNotFoundException) {
@@ -372,7 +372,7 @@ class AppUtils private constructor() {
          * @return App版本码
          */
         val appVersionCode: Int
-            get() = getAppVersionCode(Utils.getApp().packageName)
+            get() = getAppVersionCode(Utils.app.packageName)
 
         /**
          * 获取App版本码
@@ -383,7 +383,7 @@ class AppUtils private constructor() {
         fun getAppVersionCode(packageName: String): Int {
             if (isSpace(packageName)) return -1
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val pi = pm.getPackageInfo(packageName, 0)
                 return pi?.versionCode ?: -1
             } catch (e: PackageManager.NameNotFoundException) {
@@ -399,7 +399,7 @@ class AppUtils private constructor() {
          * @return `true`: 是<br></br>`false`: 否
          */
         val isSystemApp: Boolean
-            get() = isSystemApp(Utils.getApp().packageName)
+            get() = isSystemApp(Utils.app.packageName)
 
         /**
          * 判断App是否是系统应用
@@ -410,7 +410,7 @@ class AppUtils private constructor() {
         fun isSystemApp(packageName: String): Boolean {
             if (isSpace(packageName)) return false
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val ai = pm.getApplicationInfo(packageName, 0)
                 return ai != null && ai.flags and ApplicationInfo.FLAG_SYSTEM != 0
             } catch (e: PackageManager.NameNotFoundException) {
@@ -426,7 +426,7 @@ class AppUtils private constructor() {
          * @return `true`: 是<br></br>`false`: 否
          */
         val isAppDebug: Boolean
-            get() = isAppDebug(Utils.getApp().packageName)
+            get() = isAppDebug(Utils.app.packageName)
 
         /**
          * 判断App是否是Debug版本
@@ -437,7 +437,7 @@ class AppUtils private constructor() {
         fun isAppDebug(packageName: String): Boolean {
             if (isSpace(packageName)) return false
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val ai = pm.getApplicationInfo(packageName, 0)
                 return ai != null && ai.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
             } catch (e: PackageManager.NameNotFoundException) {
@@ -453,7 +453,7 @@ class AppUtils private constructor() {
          * @return App签名
          */
         val appSignature: Array<Signature>?
-            get() = getAppSignature(Utils.getApp().packageName)
+            get() = getAppSignature(Utils.app.packageName)
 
         /**
          * 获取App签名
@@ -464,7 +464,7 @@ class AppUtils private constructor() {
         fun getAppSignature(packageName: String): Array<Signature>? {
             if (isSpace(packageName)) return null
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 @SuppressLint("PackageManagerGetSignatures")
                 val pi = pm.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
                 return pi?.signatures
@@ -483,7 +483,7 @@ class AppUtils private constructor() {
          * @return 应用签名的SHA1字符串, 比如：53:FD:54:DC:19:0F:11:AC:B5:22:9E:F1:1A:68:88:1B:8B:E8:54:42
          */
         val appSignatureSHA1: String?
-            get() = getAppSignatureSHA1(Utils.getApp().packageName)
+            get() = getAppSignatureSHA1(Utils.app.packageName)
 
         /**
          * 获取应用签名的的SHA1值
@@ -505,12 +505,12 @@ class AppUtils private constructor() {
          */
         val isAppForeground: Boolean
             get() {
-                val manager = Utils.getApp().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+                val manager = Utils.app.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
                 val info = manager.runningAppProcesses
                 if (info == null || info.size == 0) return false
                 for (aInfo in info) {
                     if (aInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-                        return aInfo.processName == Utils.getApp().packageName
+                        return aInfo.processName == Utils.app.packageName
                     }
                 }
                 return false
@@ -537,7 +537,7 @@ class AppUtils private constructor() {
          * @return 当前应用的AppInfo
          */
         val appInfo: AppInfo?
-            get() = getAppInfo(Utils.getApp().packageName)
+            get() = getAppInfo(Utils.app.packageName)
 
         /**
          * 获取App信息
@@ -549,7 +549,7 @@ class AppUtils private constructor() {
          */
         fun getAppInfo(packageName: String): AppInfo? {
             try {
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val pi = pm.getPackageInfo(packageName, 0)
                 return getBean(pm, pi)
             } catch (e: PackageManager.NameNotFoundException) {
@@ -592,7 +592,7 @@ class AppUtils private constructor() {
         val appsInfo: List<AppInfo>
             get() {
                 val list = ArrayList<AppInfo>()
-                val pm = Utils.getApp().packageManager
+                val pm = Utils.app.packageManager
                 val installedPackages = pm.getInstalledPackages(0)
                 for (pi in installedPackages) {
                     val ai = getBean(pm, pi) ?: continue

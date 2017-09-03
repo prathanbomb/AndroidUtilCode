@@ -56,7 +56,7 @@ class IntentUtils private constructor() {
                 data = Uri.fromFile(file)
             } else {
                 intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                data = FileProvider.getUriForFile(Utils.getApp(), authority, file)
+                data = FileProvider.getUriForFile(Utils.app, authority, file)
             }
             intent.setDataAndType(data, type)
             return intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -81,7 +81,7 @@ class IntentUtils private constructor() {
          * @return intent
          */
         fun getLaunchAppIntent(packageName: String): Intent? {
-            return Utils.getApp().packageManager.getLaunchIntentForPackage(packageName)
+            return Utils.app.packageManager.getLaunchIntentForPackage(packageName)
         }
 
         /**

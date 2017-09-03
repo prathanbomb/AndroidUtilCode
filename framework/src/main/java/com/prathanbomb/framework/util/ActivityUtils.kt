@@ -35,9 +35,9 @@ class ActivityUtils private constructor() {
                              className: String): Boolean {
             val intent = Intent()
             intent.setClassName(packageName, className)
-            return !(Utils.getApp().packageManager.resolveActivity(intent, 0) == null ||
-                    intent.resolveActivity(Utils.getApp().packageManager) == null ||
-                    Utils.getApp().packageManager.queryIntentActivities(intent, 0).size == 0)
+            return !(Utils.app.packageManager.resolveActivity(intent, 0) == null ||
+                    intent.resolveActivity(Utils.app.packageManager) == null ||
+                    Utils.app.packageManager.queryIntentActivities(intent, 0).size == 0)
         }
 
         /**
@@ -46,7 +46,7 @@ class ActivityUtils private constructor() {
          * @param cls activity类
          */
         fun startActivity(cls: Class<*>) {
-            val context = Utils.getApp()
+            val context = Utils.app
             startActivity(context, null, context.packageName, cls.name, null)
         }
 
@@ -58,7 +58,7 @@ class ActivityUtils private constructor() {
          */
         fun startActivity(cls: Class<*>,
                           options: Bundle) {
-            val context = Utils.getApp()
+            val context = Utils.app
             startActivity(context, null, context.packageName, cls.name, options)
         }
 
@@ -110,7 +110,7 @@ class ActivityUtils private constructor() {
          */
         fun startActivity(extras: Bundle,
                           cls: Class<*>) {
-            val context = Utils.getApp()
+            val context = Utils.app
             startActivity(context, extras, context.packageName, cls.name, null)
         }
 
@@ -124,7 +124,7 @@ class ActivityUtils private constructor() {
         fun startActivity(extras: Bundle,
                           cls: Class<*>,
                           options: Bundle) {
-            val context = Utils.getApp()
+            val context = Utils.app
             startActivity(context, extras, context.packageName, cls.name, options)
         }
 
@@ -182,7 +182,7 @@ class ActivityUtils private constructor() {
          */
         fun startActivity(pkg: String,
                           cls: String) {
-            startActivity(Utils.getApp(), null, pkg, cls, null)
+            startActivity(Utils.app, null, pkg, cls, null)
         }
 
         /**
@@ -195,7 +195,7 @@ class ActivityUtils private constructor() {
         fun startActivity(pkg: String,
                           cls: String,
                           options: Bundle) {
-            startActivity(Utils.getApp(), null, pkg, cls, options)
+            startActivity(Utils.app, null, pkg, cls, options)
         }
 
         /**
@@ -254,7 +254,7 @@ class ActivityUtils private constructor() {
         fun startActivity(extras: Bundle,
                           pkg: String,
                           cls: String) {
-            startActivity(Utils.getApp(), extras, pkg, cls, null)
+            startActivity(Utils.app, extras, pkg, cls, null)
         }
 
         /**
@@ -269,7 +269,7 @@ class ActivityUtils private constructor() {
                           pkg: String,
                           cls: String,
                           options: Bundle) {
-            startActivity(Utils.getApp(), extras, pkg, cls, options)
+            startActivity(Utils.app, extras, pkg, cls, options)
         }
 
         /**
@@ -351,7 +351,7 @@ class ActivityUtils private constructor() {
             val intent = Intent(Intent.ACTION_MAIN, null)
             intent.addCategory(Intent.CATEGORY_LAUNCHER)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            val pm = Utils.getApp().packageManager
+            val pm = Utils.app.packageManager
             val info = pm.queryIntentActivities(intent, 0)
             for (aInfo in info) {
                 if (aInfo.activityInfo.packageName == packageName) {
@@ -370,7 +370,7 @@ class ActivityUtils private constructor() {
         val topActivity: Activity
             get() {
                 if (Utils.sTopActivityWeakRef != null) {
-                    val activity = Utils.sTopActivityWeakRef.get()
+                    val activity = Utils.sTopActivityWeakRef!!.get()
                     if (activity != null) {
                         return activity
                     }

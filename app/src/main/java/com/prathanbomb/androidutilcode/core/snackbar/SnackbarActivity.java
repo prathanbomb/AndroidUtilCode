@@ -86,7 +86,7 @@ public class SnackbarActivity extends BaseBackActivity {
                         .setAction(getString(R.string.snackbar_click), Color.YELLOW, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                ToastUtils.showShort(getString(R.string.snackbar_click));
+                                ToastUtils.Companion.showShort(getString(R.string.snackbar_click));
                             }
                         })
                         .show();
@@ -110,7 +110,7 @@ public class SnackbarActivity extends BaseBackActivity {
                         .setAction(getString(R.string.snackbar_click), Color.YELLOW, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                ToastUtils.showShort(getString(R.string.snackbar_click));
+                                ToastUtils.Companion.showShort(getString(R.string.snackbar_click));
                             }
                         })
                         .show();
@@ -134,7 +134,7 @@ public class SnackbarActivity extends BaseBackActivity {
                         .setAction(getString(R.string.snackbar_click), Color.YELLOW, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                ToastUtils.showShort(getString(R.string.snackbar_click));
+                                ToastUtils.Companion.showShort(getString(R.string.snackbar_click));
                             }
                         })
                         .show();

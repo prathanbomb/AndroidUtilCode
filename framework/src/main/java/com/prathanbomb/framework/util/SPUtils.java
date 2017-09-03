@@ -48,7 +48,7 @@ public final class SPUtils {
     }
 
     private SPUtils(final String spName) {
-        sp = Utils.getApp().getSharedPreferences(spName, Context.MODE_PRIVATE);
+        sp = Utils.Companion.getApp().getSharedPreferences(spName, Context.MODE_PRIVATE);
     }
 
     /**

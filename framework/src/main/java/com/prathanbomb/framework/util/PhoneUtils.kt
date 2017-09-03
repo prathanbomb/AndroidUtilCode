@@ -37,7 +37,7 @@ class PhoneUtils private constructor() {
          */
         val isPhone: Boolean
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm != null && tm.phoneType != TelephonyManager.PHONE_TYPE_NONE
             }
 
@@ -51,7 +51,7 @@ class PhoneUtils private constructor() {
         val imei: String?
             @SuppressLint("HardwareIds", "MissingPermission")
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm.deviceId
             }
 
@@ -65,7 +65,7 @@ class PhoneUtils private constructor() {
         val imsi: String?
             @SuppressLint("HardwareIds", "MissingPermission")
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm.subscriberId
             }
 
@@ -82,7 +82,7 @@ class PhoneUtils private constructor() {
          */
         val phoneType: Int
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm.phoneType
             }
 
@@ -93,7 +93,7 @@ class PhoneUtils private constructor() {
          */
         val isSimCardReady: Boolean
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm.simState == TelephonyManager.SIM_STATE_READY
             }
 
@@ -106,7 +106,7 @@ class PhoneUtils private constructor() {
          */
         val simOperatorName: String?
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm.simOperatorName
             }
 
@@ -119,7 +119,7 @@ class PhoneUtils private constructor() {
          */
         val simOperatorByMnc: String?
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 val operator = tm.simOperator ?: return null
                 return when (operator) {
                     "46000", "46002", "46007" -> "中国移动"
@@ -153,7 +153,7 @@ class PhoneUtils private constructor() {
         val phoneStatus: String
             @SuppressLint("HardwareIds", "MissingPermission")
             get() {
-                val tm = Utils.getApp()
+                val tm = Utils.app
                         .getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 var str = ""
                 str += "DeviceId(IMEI) = " + tm.deviceId + "\n"
@@ -180,7 +180,7 @@ class PhoneUtils private constructor() {
          * @param phoneNumber 电话号码
          */
         fun dial(phoneNumber: String) {
-            Utils.getApp().startActivity(IntentUtils.getDialIntent(phoneNumber))
+            Utils.app.startActivity(IntentUtils.getDialIntent(phoneNumber))
         }
 
         /**
@@ -191,7 +191,7 @@ class PhoneUtils private constructor() {
          * @param phoneNumber 电话号码
          */
         fun call(phoneNumber: String) {
-            Utils.getApp().startActivity(IntentUtils.getCallIntent(phoneNumber))
+            Utils.app.startActivity(IntentUtils.getCallIntent(phoneNumber))
         }
 
         /**
@@ -201,7 +201,7 @@ class PhoneUtils private constructor() {
          * @param content     短信内容
          */
         fun sendSms(phoneNumber: String, content: String) {
-            Utils.getApp().startActivity(IntentUtils.getSendSmsIntent(phoneNumber, content))
+            Utils.app.startActivity(IntentUtils.getSendSmsIntent(phoneNumber, content))
         }
 
         /**
@@ -214,7 +214,7 @@ class PhoneUtils private constructor() {
          */
         fun sendSmsSilent(phoneNumber: String, content: String) {
             if (StringUtils.isEmpty(content)) return
-            val sentIntent = PendingIntent.getBroadcast(Utils.getApp(), 0, Intent(), 0)
+            val sentIntent = PendingIntent.getBroadcast(Utils.app, 0, Intent(), 0)
             val smsManager = SmsManager.getDefault()
             if (content.length >= 70) {
                 val ms = smsManager.divideMessage(content)
@@ -265,7 +265,7 @@ class PhoneUtils private constructor() {
             get() {
                 SystemClock.sleep(3000)
                 val list = ArrayList<HashMap<String, String>>()
-                val resolver = Utils.getApp().contentResolver
+                val resolver = Utils.app.contentResolver
                 val raw_uri = Uri.parse("content://com.android.contacts/raw_contacts")
                 val date_uri = Uri.parse("content://com.android.contacts/data")
                 val cursor = resolver.query(raw_uri, arrayOf("contact_id"), null, null, null)
@@ -341,7 +341,7 @@ class PhoneUtils private constructor() {
         fun getAllSMS() {
             // 1.获取短信
             // 1.1获取内容解析者
-            val resolver = Utils.getApp().contentResolver
+            val resolver = Utils.app.contentResolver
             // 1.2获取内容提供者地址   sms,sms表的地址:null  不写
             // 1.3获取查询路径
             val uri = Uri.parse("content://sms")

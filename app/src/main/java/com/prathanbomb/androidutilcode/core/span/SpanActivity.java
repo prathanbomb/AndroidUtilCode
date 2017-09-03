@@ -85,7 +85,7 @@ public class SpanActivity extends BaseBackActivity {
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                ToastUtils.showShort("事件触发了");
+                ToastUtils.Companion.showShort("事件触发了");
             }
 
             @Override

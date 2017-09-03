@@ -114,10 +114,10 @@ class ConvertUtils private constructor() {
          * @return 字节数组
          */
         fun chars2Bytes(chars: CharArray?): ByteArray? {
-            if (chars == null || chars.size <= 0) return null
+            if (chars == null || chars.isEmpty()) return null
             val len = chars.size
             val bytes = ByteArray(len)
-            for (i in 0..len - 1) {
+            for (i in 0 until len) {
                 bytes[i] = chars[i].toByte()
             }
             return bytes
@@ -342,8 +342,8 @@ class ConvertUtils private constructor() {
          * @param is 输入流
          * @return 字节数组
          */
-        fun inputStream2Bytes(`is`: InputStream?): ByteArray? {
-            return if (`is` == null) null else input2OutputStream(`is`)!!.toByteArray()
+        fun inputStream2Bytes(input: InputStream?): ByteArray? {
+            return if (input == null) null else input2OutputStream(input)!!.toByteArray()
         }
 
         /**
@@ -515,7 +515,7 @@ class ConvertUtils private constructor() {
          * @return drawable
          */
         fun bitmap2Drawable(bitmap: Bitmap?): Drawable? {
-            return if (bitmap == null) null else BitmapDrawable(Utils.getApp().resources, bitmap)
+            return if (bitmap == null) null else BitmapDrawable(Utils.app.resources, bitmap)
         }
 
         /**
@@ -566,7 +566,7 @@ class ConvertUtils private constructor() {
          * @return px值
          */
         fun dp2px(dpValue: Float): Int {
-            val scale = Utils.getApp().resources.displayMetrics.density
+            val scale = Utils.app.resources.displayMetrics.density
             return (dpValue * scale + 0.5f).toInt()
         }
 
@@ -577,7 +577,7 @@ class ConvertUtils private constructor() {
          * @return dp值
          */
         fun px2dp(pxValue: Float): Int {
-            val scale = Utils.getApp().resources.displayMetrics.density
+            val scale = Utils.app.resources.displayMetrics.density
             return (pxValue / scale + 0.5f).toInt()
         }
 
@@ -588,7 +588,7 @@ class ConvertUtils private constructor() {
          * @return px值
          */
         fun sp2px(spValue: Float): Int {
-            val fontScale = Utils.getApp().resources.displayMetrics.scaledDensity
+            val fontScale = Utils.app.resources.displayMetrics.scaledDensity
             return (spValue * fontScale + 0.5f).toInt()
         }
 
@@ -599,7 +599,7 @@ class ConvertUtils private constructor() {
          * @return sp值
          */
         fun px2sp(pxValue: Float): Int {
-            val fontScale = Utils.getApp().resources.displayMetrics.scaledDensity
+            val fontScale = Utils.app.resources.displayMetrics.scaledDensity
             return (pxValue / fontScale + 0.5f).toInt()
         }
 

@@ -42,7 +42,7 @@ class NetworkUtils private constructor() {
          * 打开网络设置界面
          */
         fun openWirelessSettings() {
-            Utils.getApp().startActivity(Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+            Utils.app.startActivity(Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
         /**
@@ -54,7 +54,7 @@ class NetworkUtils private constructor() {
          */
         private val activeNetworkInfo: NetworkInfo?
             @SuppressLint("MissingPermission")
-            get() = (Utils.getApp().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo
+            get() = (Utils.app.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo
 
         /**
          * 判断网络是否连接
@@ -124,7 +124,7 @@ class NetworkUtils private constructor() {
         var dataEnabled: Boolean
             get() {
                 try {
-                    val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                    val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                     val getMobileDataEnabledMethod = tm.javaClass.getDeclaredMethod("getDataEnabled")
                     if (null != getMobileDataEnabledMethod) {
                         return getMobileDataEnabledMethod.invoke(tm) as Boolean
@@ -136,7 +136,7 @@ class NetworkUtils private constructor() {
                 return false
             }
             set(enabled) = try {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 val setMobileDataEnabledMethod = tm.javaClass.getDeclaredMethod("setDataEnabled", Boolean::class.javaPrimitiveType)
                 when {
                     null != setMobileDataEnabledMethod -> setMobileDataEnabledMethod.invoke(tm, enabled) as Unit
@@ -178,13 +178,13 @@ class NetworkUtils private constructor() {
             @SuppressLint("WifiManagerLeak")
             get() {
                 @SuppressLint("WifiManagerLeak")
-                val wifiManager = Utils.getApp().getSystemService(Context.WIFI_SERVICE) as WifiManager
+                val wifiManager = Utils.app.getSystemService(Context.WIFI_SERVICE) as WifiManager
                 return wifiManager.isWifiEnabled
             }
             @SuppressLint("WifiManagerLeak", "MissingPermission")
             set(enabled) {
                 @SuppressLint("WifiManagerLeak")
-                val wifiManager = Utils.getApp().getSystemService(Context.WIFI_SERVICE) as WifiManager
+                val wifiManager = Utils.app.getSystemService(Context.WIFI_SERVICE) as WifiManager
                 if (enabled) {
                     if (!wifiManager.isWifiEnabled) {
                         wifiManager.isWifiEnabled = true
@@ -206,7 +206,7 @@ class NetworkUtils private constructor() {
         val isWifiConnected: Boolean
             @SuppressLint("MissingPermission")
             get() {
-                val cm = Utils.getApp()
+                val cm = Utils.app
                         .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
                 return cm.activeNetworkInfo != null && cm.activeNetworkInfo.type == ConnectivityManager.TYPE_WIFI
             }
@@ -232,7 +232,7 @@ class NetworkUtils private constructor() {
          */
         val networkOperatorName: String?
             get() {
-                val tm = Utils.getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                val tm = Utils.app.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 return tm.networkOperatorName
             }
 

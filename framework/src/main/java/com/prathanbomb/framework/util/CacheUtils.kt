@@ -667,7 +667,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
         }
 
         private fun bitmap2Drawable(bitmap: Bitmap?): Drawable? {
-            return if (bitmap == null) null else BitmapDrawable(Utils.getApp().resources, bitmap)
+            return if (bitmap == null) null else BitmapDrawable(Utils.app.resources, bitmap)
         }
     }
 
@@ -724,7 +724,7 @@ class CacheUtils private constructor(cacheDir: File, maxSize: Long, maxCount: In
         fun getInstance(cacheName: String, maxSize: Long = DEFAULT_MAX_SIZE, maxCount: Int = DEFAULT_MAX_COUNT): CacheUtils {
             var cacheName = cacheName
             if (isSpace(cacheName)) cacheName = "cacheUtils"
-            val file = File(Utils.getApp().cacheDir, cacheName)
+            val file = File(Utils.app.cacheDir, cacheName)
             return getInstance(file, maxSize, maxCount)
         }
 

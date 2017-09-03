@@ -55,7 +55,7 @@ class DeviceUtils private constructor() {
          */
         val androidID: String
             @SuppressLint("HardwareIds")
-            get() = Settings.Secure.getString(Utils.getApp().contentResolver, Settings.Secure.ANDROID_ID)
+            get() = Settings.Secure.getString(Utils.app.contentResolver, Settings.Secure.ANDROID_ID)
 
         /**
          * 获取设备MAC地址
@@ -94,7 +94,7 @@ class DeviceUtils private constructor() {
             get() {
                 try {
                     @SuppressLint("WifiManagerLeak")
-                    val wifi = Utils.getApp().getSystemService(Context.WIFI_SERVICE) as WifiManager
+                    val wifi = Utils.app.getSystemService(Context.WIFI_SERVICE) as WifiManager
                     val info = wifi.connectionInfo
                     if (info != null) return info.macAddress
                 } catch (e: Exception) {
@@ -194,7 +194,7 @@ class DeviceUtils private constructor() {
             val intent = Intent("android.intent.action.ACTION_REQUEST_SHUTDOWN")
             intent.putExtra("android.intent.extra.KEY_CONFIRM", false)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            Utils.getApp().startActivity(intent)
+            Utils.app.startActivity(intent)
         }
 
         /**
@@ -209,7 +209,7 @@ class DeviceUtils private constructor() {
             intent.putExtra("nowait", 1)
             intent.putExtra("interval", 1)
             intent.putExtra("window", 0)
-            Utils.getApp().sendBroadcast(intent)
+            Utils.app.sendBroadcast(intent)
         }
 
         /**
@@ -220,7 +220,7 @@ class DeviceUtils private constructor() {
          * @param reason  传递给内核来请求特殊的引导模式，如"recovery"
          */
         fun reboot(reason: String) {
-            val mPowerManager = Utils.getApp().getSystemService(Context.POWER_SERVICE) as PowerManager
+            val mPowerManager = Utils.app.getSystemService(Context.POWER_SERVICE) as PowerManager
             try {
                 mPowerManager.reboot(reason)
             } catch (e: Exception) {

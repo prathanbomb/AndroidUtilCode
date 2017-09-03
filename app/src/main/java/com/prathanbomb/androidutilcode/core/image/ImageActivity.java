@@ -58,26 +58,26 @@ public class ImageActivity extends BaseBackActivity {
         ImageView ivAddImageWatermark = (ImageView) findViewById(R.id.iv_add_image_watermark);
         ImageView ivGray = (ImageView) findViewById(R.id.iv_gray);
 
-        Bitmap src = ImageUtils.getBitmap(R.drawable.img_lena);
-        Bitmap watermark = ImageUtils.getBitmap(R.mipmap.ic_launcher);
+        Bitmap src = ImageUtils.Companion.getBitmap(R.drawable.img_lena);
+        Bitmap watermark = ImageUtils.Companion.getBitmap(R.mipmap.ic_launcher);
 
         SizeUtils.forceGetViewSize(ivSrc, new SizeUtils.onGetSizeListener() {
             @Override
             public void onGetSize(View view) {
-                ivView2Bitmap.setImageBitmap(ImageUtils.view2Bitmap(ivSrc));
+                ivView2Bitmap.setImageBitmap(ImageUtils.Companion.view2Bitmap(ivSrc));
             }
         });
-        ivRound.setImageBitmap(ImageUtils.toRound(src));
-        ivRoundCorner.setImageBitmap(ImageUtils.toRoundCorner(src, 60));
-        ivFastBlur.setImageBitmap(ImageUtils.fastBlur(src, 0.1f, 5));
-        ivRenderScriptBlur.setImageBitmap(ImageUtils.renderScriptBlur(src, 10));
-        src = ImageUtils.getBitmap(R.drawable.img_lena);
-        ivStackBlur.setImageBitmap(ImageUtils.stackBlur(src, 10, false));
-        ivAddFrame.setImageBitmap(ImageUtils.addFrame(src, 16, Color.GREEN));
-        ivAddReflection.setImageBitmap(ImageUtils.addReflection(src, 80));
-        ivAddTextWatermark.setImageBitmap(ImageUtils.addTextWatermark(src, "prathanbomb", 40, 0x8800ff00, 0, 0));
-        ivAddImageWatermark.setImageBitmap(ImageUtils.addImageWatermark(src, watermark, 0, 0, 0x88));
-        ivGray.setImageBitmap(ImageUtils.toGray(src));
+        ivRound.setImageBitmap(ImageUtils.Companion.toRound(src));
+        ivRoundCorner.setImageBitmap(ImageUtils.Companion.toRoundCorner(src, 60));
+        ivFastBlur.setImageBitmap(ImageUtils.Companion.fastBlur(src, 0.1f, 5));
+        ivRenderScriptBlur.setImageBitmap(ImageUtils.Companion.renderScriptBlur(src, 10));
+        src = ImageUtils.Companion.getBitmap(R.drawable.img_lena);
+        ivStackBlur.setImageBitmap(ImageUtils.Companion.stackBlur(src, 10, false));
+        ivAddFrame.setImageBitmap(ImageUtils.Companion.addFrame(src, 16, Color.GREEN));
+        ivAddReflection.setImageBitmap(ImageUtils.Companion.addReflection(src, 80));
+        ivAddTextWatermark.setImageBitmap(ImageUtils.Companion.addTextWatermark(src, "prathanbomb", 40, 0x8800ff00, 0, 0));
+        ivAddImageWatermark.setImageBitmap(ImageUtils.Companion.addImageWatermark(src, watermark, 0, 0, 0x88));
+        ivGray.setImageBitmap(ImageUtils.Companion.toGray(src));
     }
 
     @Override

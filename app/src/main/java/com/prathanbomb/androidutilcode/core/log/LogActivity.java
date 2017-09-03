@@ -27,7 +27,7 @@ public class LogActivity extends BaseBackActivity {
 
     private TextView tvAboutLog;
 
-    private LogUtils.Config mConfig = LogUtils.getConfig();
+    private LogUtils.Config mConfig = LogUtils.Companion.getConfig();
 
     private String  dir           = "";
     private String  globalTag     = "";
@@ -52,12 +52,12 @@ public class LogActivity extends BaseBackActivity {
     private Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
-            LogUtils.v("verbose");
-            LogUtils.d("debug");
-            LogUtils.i("info");
-            LogUtils.w("warn");
-            LogUtils.e("error");
-            LogUtils.a("assert");
+            LogUtils.Companion.v("verbose");
+            LogUtils.Companion.d("debug");
+            LogUtils.Companion.i("info");
+            LogUtils.Companion.w("warn");
+            LogUtils.Companion.e("error");
+            LogUtils.Companion.a("assert");
         }
     };
 
@@ -150,59 +150,59 @@ public class LogActivity extends BaseBackActivity {
                 updateAbout(UPDATE_FILE_FILTER);
                 break;
             case R.id.btn_log_no_tag:
-                LogUtils.v("verbose");
-                LogUtils.d("debug");
-                LogUtils.i("info");
-                LogUtils.w("warn");
-                LogUtils.e("error");
-                LogUtils.a("assert");
+                LogUtils.Companion.v("verbose");
+                LogUtils.Companion.d("debug");
+                LogUtils.Companion.i("info");
+                LogUtils.Companion.w("warn");
+                LogUtils.Companion.e("error");
+                LogUtils.Companion.a("assert");
                 break;
             case R.id.btn_log_with_tag:
-                LogUtils.v("customTag", "verbose");
-                LogUtils.d("customTag", "debug");
-                LogUtils.i("customTag", "info");
-                LogUtils.w("customTag", "warn");
-                LogUtils.e("customTag", "error");
-                LogUtils.a("customTag", "assert");
+                LogUtils.Companion.v("customTag", "verbose");
+                LogUtils.Companion.d("customTag", "debug");
+                LogUtils.Companion.i("customTag", "info");
+                LogUtils.Companion.w("customTag", "warn");
+                LogUtils.Companion.e("customTag", "error");
+                LogUtils.Companion.a("customTag", "assert");
                 break;
             case R.id.btn_log_in_new_thread:
                 Thread thread = new Thread(mRunnable);
                 thread.start();
                 break;
             case R.id.btn_log_null:
-                LogUtils.v(null);
-                LogUtils.d(null);
-                LogUtils.i(null);
-                LogUtils.w(null);
-                LogUtils.e(null);
-                LogUtils.a(null);
+                LogUtils.Companion.v(null);
+                LogUtils.Companion.d(null);
+                LogUtils.Companion.i(null);
+                LogUtils.Companion.w(null);
+                LogUtils.Companion.e(null);
+                LogUtils.Companion.a(null);
                 break;
             case R.id.btn_log_many_params:
-                LogUtils.v("customTag", "verbose0", "verbose1");
-                LogUtils.d("customTag", "debug0", "debug1");
-                LogUtils.i("customTag", "info0", "info1");
-                LogUtils.w("customTag", "warn0", "warn1");
-                LogUtils.e("customTag", "error0", "error1");
-                LogUtils.a("customTag", "assert0", "assert1");
+                LogUtils.Companion.v("customTag", "verbose0", "verbose1");
+                LogUtils.Companion.d("customTag", "debug0", "debug1");
+                LogUtils.Companion.i("customTag", "info0", "info1");
+                LogUtils.Companion.w("customTag", "warn0", "warn1");
+                LogUtils.Companion.e("customTag", "error0", "error1");
+                LogUtils.Companion.a("customTag", "assert0", "assert1");
                 break;
             case R.id.btn_log_long:
-                LogUtils.d(longStr);
+                LogUtils.Companion.d(longStr);
                 break;
             case R.id.btn_log_file:
                 for (int i = 0; i < 100; i++) {
-                    LogUtils.file("test0 log to file");
-                    LogUtils.file(LogUtils.I, "test0 log to file");
+                    LogUtils.Companion.file("test0 log to file");
+                    LogUtils.Companion.file(LogUtils.I, "test0 log to file");
                 }
                 break;
             case R.id.btn_log_json:
                 String json = "{\"tools\": [{ \"name\":\"css format\" , \"site\":\"http://tools.w3cschool.cn/code/css\" },{ \"name\":\"json format\" , \"site\":\"http://tools.w3cschool.cn/code/json\" },{ \"name\":\"pwd check\" , \"site\":\"http://tools.w3cschool.cn/password/my_password_safe\" }]}";
-                LogUtils.json(json);
-                LogUtils.json(LogUtils.I, json);
+                LogUtils.Companion.json(json);
+                LogUtils.Companion.json(LogUtils.I, json);
                 break;
             case R.id.btn_log_xml:
                 String xml = "<books><book><author>Jack Herrington</author><title>PHP Hacks</title><publisher>O'Reilly</publisher></book><book><author>Jack Herrington</author><title>Podcasting Hacks</title><publisher>O'Reilly</publisher></book></books>";
-                LogUtils.xml(xml);
-                LogUtils.xml(LogUtils.I, xml);
+                LogUtils.Companion.xml(xml);
+                LogUtils.Companion.xml(LogUtils.I, xml);
                 break;
         }
     }

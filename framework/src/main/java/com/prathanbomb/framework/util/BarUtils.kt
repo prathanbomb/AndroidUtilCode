@@ -46,7 +46,7 @@ class BarUtils private constructor() {
          */
         val statusBarHeight: Int
             get() {
-                val resources = Utils.getApp().resources
+                val resources = Utils.app.resources
                 val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
                 return resources.getDimensionPixelSize(resourceId)
             }
@@ -439,7 +439,7 @@ class BarUtils private constructor() {
          */
         val navBarHeight: Int
             get() {
-                val res = Utils.getApp().resources
+                val res = Utils.app.resources
                 val resourceId = res.getIdentifier("navigation_bar_height", "dimen", "android")
                 return if (resourceId != 0) {
                     res.getDimensionPixelSize(resourceId)

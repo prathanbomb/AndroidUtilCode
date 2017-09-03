@@ -54,18 +54,47 @@ android {
     }
 }
 
-dependencies {
-    provided "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
-    provided "com.android.support:support-v4:$rootProject.ext.supportVersion"
-    provided "com.android.support:design:$rootProject.ext.supportVersion"
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'framework'
 
-    testCompile "junit:junit:$rootProject.ext.junitVersion"
-    testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
-    testCompile "com.google.truth:truth:0.31"
+    publishedGroupId = 'com.prathanbomb'
+    libraryName = 'Framework'
+    artifact = 'framework'
+
+    libraryDescription = 'Utility android framework'
+
+    siteUrl = 'https://github.com/prathanbomb/AndroidUtilCode'
+    gitUrl = 'https://github.com/prathanbomb/AndroidUtilCode.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'prathanbomb'
+    developerName = 'Supitsara Prathan'
+    developerEmail = 'prathanbomb@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+dependencies {
+    compileOnly "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    compileOnly "com.android.support:support-v4:$rootProject.ext.supportVersion"
+    compileOnly "com.android.support:design:$rootProject.ext.supportVersion"
+
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
+    testImplementation "com.google.truth:truth:0.31"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
 repositories {
     mavenCentral()
 }
-//apply from: "https://raw.githubusercontent.com/xiaopansky/android-library-publish-to-jcenter/master/bintrayUpload.gradle"
-//gradle bintrayUpload
+
+tasks.withType(Javadoc) {
+    enabled = false
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

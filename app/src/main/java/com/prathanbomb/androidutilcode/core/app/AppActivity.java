@@ -72,7 +72,7 @@ public class AppActivity extends BaseBackActivity {
         switch (view.getId()) {
             case R.id.btn_install_app:
                 if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
-                    ToastUtils.showShort(R.string.app_install_tips);
+                    ToastUtils.Companion.showShort(R.string.app_install_tips);
                 } else {
                     AppUtils.Companion.installApp(Config.getTestApkPath(), "com.prathanbomb.androidutilcode.provider");
                 }
@@ -82,12 +82,12 @@ public class AppActivity extends BaseBackActivity {
                     @Override
                     public void run() {
                         if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
-                            ToastUtils.showShortSafe(R.string.app_install_tips);
+                            ToastUtils.Companion.showShortSafe(R.string.app_install_tips);
                         } else {
                             if (AppUtils.Companion.installAppSilent(Config.getTestApkPath())) {
-                                ToastUtils.showShortSafe(R.string.install_successfully);
+                                ToastUtils.Companion.showShortSafe(R.string.install_successfully);
                             } else {
-                                ToastUtils.showShortSafe(R.string.install_unsuccessfully);
+                                ToastUtils.Companion.showShortSafe(R.string.install_unsuccessfully);
                             }
                         }
                     }
@@ -97,18 +97,18 @@ public class AppActivity extends BaseBackActivity {
                 if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
                     AppUtils.Companion.uninstallApp(Config.TEST_PKG);
                 } else {
-                    ToastUtils.showShort(R.string.app_uninstall_tips);
+                    ToastUtils.Companion.showShort(R.string.app_uninstall_tips);
                 }
                 break;
             case R.id.btn_uninstall_app_silent:
                 if (AppUtils.Companion.isInstallApp(Config.TEST_PKG)) {
                     if (AppUtils.Companion.uninstallAppSilent(Config.TEST_PKG, false)) {
-                        ToastUtils.showShort(R.string.uninstall_successfully);
+                        ToastUtils.Companion.showShort(R.string.uninstall_successfully);
                     } else {
-                        ToastUtils.showShort(R.string.uninstall_unsuccessfully);
+                        ToastUtils.Companion.showShort(R.string.uninstall_unsuccessfully);
                     }
                 } else {
-                    ToastUtils.showShort(R.string.app_uninstall_tips);
+                    ToastUtils.Companion.showShort(R.string.app_uninstall_tips);
                 }
                 break;
             case R.id.btn_launch_app:

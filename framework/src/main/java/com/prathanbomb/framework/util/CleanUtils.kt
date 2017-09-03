@@ -28,7 +28,7 @@ class CleanUtils private constructor() {
          * @return `true`: 清除成功<br></br>`false`: 清除失败
          */
         fun cleanInternalCache(): Boolean {
-            return deleteFilesInDir(Utils.getApp().cacheDir)
+            return deleteFilesInDir(Utils.app.cacheDir)
         }
 
         /**
@@ -39,7 +39,7 @@ class CleanUtils private constructor() {
          * @return `true`: 清除成功<br></br>`false`: 清除失败
          */
         fun cleanInternalFiles(): Boolean {
-            return deleteFilesInDir(Utils.getApp().filesDir)
+            return deleteFilesInDir(Utils.app.filesDir)
         }
 
         /**
@@ -50,7 +50,7 @@ class CleanUtils private constructor() {
          * @return `true`: 清除成功<br></br>`false`: 清除失败
          */
         fun cleanInternalDbs(): Boolean {
-            return deleteFilesInDir(Utils.getApp().filesDir.parent + File.separator + "databases")
+            return deleteFilesInDir(Utils.app.filesDir.parent + File.separator + "databases")
         }
 
         /**
@@ -62,7 +62,7 @@ class CleanUtils private constructor() {
          * @return `true`: 清除成功<br></br>`false`: 清除失败
          */
         fun cleanInternalDbByName(dbName: String): Boolean {
-            return Utils.getApp().deleteDatabase(dbName)
+            return Utils.app.deleteDatabase(dbName)
         }
 
         /**
@@ -73,7 +73,7 @@ class CleanUtils private constructor() {
          * @return `true`: 清除成功<br></br>`false`: 清除失败
          */
         fun cleanInternalSP(): Boolean {
-            return deleteFilesInDir(Utils.getApp().filesDir.parent + File.separator + "shared_prefs")
+            return deleteFilesInDir(Utils.app.filesDir.parent + File.separator + "shared_prefs")
         }
 
         /**
@@ -84,7 +84,7 @@ class CleanUtils private constructor() {
          * @return `true`: 清除成功<br></br>`false`: 清除失败
          */
         fun cleanExternalCache(): Boolean {
-            return Environment.MEDIA_MOUNTED == Environment.getExternalStorageState() && deleteFilesInDir(Utils.getApp().externalCacheDir)
+            return Environment.MEDIA_MOUNTED == Environment.getExternalStorageState() && deleteFilesInDir(Utils.app.externalCacheDir)
         }
 
         /**

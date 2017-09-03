@@ -18,7 +18,7 @@ import com.prathanbomb.framework.util.ToastUtils;
 public class MyToast {
 
     public static void showMyToast(@NonNull final String message){
-        View toastView = ToastUtils.showCustomLongSafe(R.layout.toast_custom);
+        View toastView = ToastUtils.Companion.showCustomLongSafe(R.layout.toast_custom);
         TextView tvMessage = (TextView) toastView.findViewById(R.id.tv_toast_message);
         tvMessage.setText(message);
     }

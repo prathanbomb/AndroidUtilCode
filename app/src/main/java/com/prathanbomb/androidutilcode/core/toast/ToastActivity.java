@@ -66,34 +66,34 @@ public class ToastActivity extends BaseBackActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        ToastUtils.showShortSafe(R.string.toast_short_safe);
+                        ToastUtils.Companion.showShortSafe(R.string.toast_short_safe);
                     }
                 }).start();
                 break;
             case R.id.btn_show_short_toast:
-                ToastUtils.showShort(R.string.toast_short);
+                ToastUtils.Companion.showShort(R.string.toast_short);
                 break;
             case R.id.btn_show_long_toast_safe:
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        ToastUtils.showLongSafe(R.string.toast_long_safe);
+                        ToastUtils.Companion.showLongSafe(R.string.toast_long_safe);
                     }
                 }).start();
                 break;
             case R.id.btn_show_long_toast:
-                ToastUtils.showLong(R.string.toast_long);
+                ToastUtils.Companion.showLong(R.string.toast_long);
                 break;
             case R.id.btn_show_green_font:
-                ToastUtils.setMessageColor(Color.GREEN);
-                ToastUtils.showLong(R.string.toast_green_font);
+                ToastUtils.Companion.setMessageColor(Color.GREEN);
+                ToastUtils.Companion.showLong(R.string.toast_green_font);
                 break;
             case R.id.btn_show_custom_bg:
-                ToastUtils.setBgResource(R.drawable.shape_round_rect);
-                ToastUtils.showLong(R.string.toast_custom_bg);
+                ToastUtils.Companion.setBgResource(R.drawable.shape_round_rect);
+                ToastUtils.Companion.showLong(R.string.toast_custom_bg);
                 break;
             case R.id.btn_show_span:
-                ToastUtils.showLong(new SpanUtils()
+                ToastUtils.Companion.showLong(new SpanUtils()
                         .appendLine(getString(R.string.toast_span))
                         .setFontSize(24, true)
                         .setIconMargin(R.mipmap.ic_launcher, 32, SpanUtils.ALIGN_CENTER)
@@ -105,11 +105,11 @@ public class ToastActivity extends BaseBackActivity {
                 MyToast.showMyToast(getString(R.string.toast_custom_view));
                 break;
             case R.id.btn_show_middle:
-                ToastUtils.setGravity(Gravity.CENTER, 0, 0);
-                ToastUtils.showLong(R.string.toast_middle);
+                ToastUtils.Companion.setGravity(Gravity.CENTER, 0, 0);
+                ToastUtils.Companion.showLong(R.string.toast_middle);
                 break;
             case R.id.btn_cancel_toast:
-                ToastUtils.cancel();
+                ToastUtils.Companion.cancel();
                 break;
         }
     }
@@ -121,9 +121,9 @@ public class ToastActivity extends BaseBackActivity {
     }
 
     private void resetToast() {
-        ToastUtils.setMessageColor(0xFFFFFFFF);
-        ToastUtils.setBgResource(-1);
-        ToastUtils.setView(null);
-        ToastUtils.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, getResources().getDimensionPixelSize(R.dimen.offset_64));
+        ToastUtils.Companion.setMessageColor(0xFFFFFFFF);
+        ToastUtils.Companion.setBgResource(-1);
+        ToastUtils.Companion.setView(null);
+        ToastUtils.Companion.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, getResources().getDimensionPixelSize(R.dimen.offset_64));
     }
 }

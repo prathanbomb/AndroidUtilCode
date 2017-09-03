@@ -115,7 +115,7 @@ public class KeyboardActivity extends BaseBackActivity {
         rootView.getWindowVisibleDisplayFrame(frame);
         DisplayMetrics dm = rootView.getResources().getDisplayMetrics();
         int heightDiff = rootView.getBottom() - frame.bottom;
-        LogUtils.d("" + rootView.getBottom() + ", " + frame.bottom + ", " + heightDiff);
+        LogUtils.Companion.d("" + rootView.getBottom() + ", " + frame.bottom + ", " + heightDiff);
         return heightDiff > softKeyboardHeight * dm.density;
     }
 }

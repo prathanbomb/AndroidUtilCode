@@ -81,7 +81,7 @@ public class Demo2Fragment extends BaseFragment
 
     @Override
     public boolean onBackClick() {
-        LogUtils.d("demo2 onBackClick");
+        LogUtils.Companion.d("demo2 onBackClick");
         return false;
     }
 }

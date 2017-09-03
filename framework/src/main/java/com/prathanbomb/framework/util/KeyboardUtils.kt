@@ -48,7 +48,7 @@ class KeyboardUtils private constructor() {
             view.isFocusable = true
             view.isFocusableInTouchMode = true
             view.requestFocus()
-            val imm = Utils.getApp().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager ?: return
+            val imm = Utils.app.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager ?: return
             imm.showSoftInput(view, InputMethodManager.SHOW_FORCED)
         }
 
@@ -70,7 +70,7 @@ class KeyboardUtils private constructor() {
          * @param view 视图
          */
         fun hideSoftInput(view: View) {
-            val imm = Utils.getApp().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager ?: return
+            val imm = Utils.app.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager ?: return
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
 
@@ -78,7 +78,7 @@ class KeyboardUtils private constructor() {
          * 切换键盘显示与否状态
          */
         fun toggleSoftInput() {
-            val imm = Utils.getApp().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager ?: return
+            val imm = Utils.app.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager ?: return
             imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
         }
 

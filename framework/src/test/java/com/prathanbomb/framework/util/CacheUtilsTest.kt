@@ -45,7 +45,7 @@ class CacheUtilsTest {
     private val mParcelableTest = ParcelableTest("prathanbomb", "CacheUtils")
     private val mSerializableTest = SerializableTest("prathanbomb", "CacheUtils")
     private val mBitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.RGB_565)
-    private val mDrawable = BitmapDrawable(Utils.getApp().resources, mBitmap)
+    private val mDrawable = BitmapDrawable(Utils.app.resources, mBitmap)
 
     init {
         try {
