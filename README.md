@@ -618,7 +618,7 @@ getEntries
 
 Gradle:
 ``` groovy
-compile 'com.prathanbomb:utilcode:1.8.5'
+compile 'com.prathanbomb:framework:1.0.0'
 ```
 
 
